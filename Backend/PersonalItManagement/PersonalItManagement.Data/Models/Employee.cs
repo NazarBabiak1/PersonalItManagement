@@ -9,8 +9,8 @@ namespace PersonalItManagement.Models
     public class Employee
     {
         public int Id { get; set; }
-        public string UserId { get; set; }
-        public User User { get; set; }
+        public string AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
         public int Percentage { get; set; }
 
     }

@@ -19,10 +19,6 @@
       "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Migrations\\20241225191127_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PersonalItManagement.Data\\Migrations\\20241225191127_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\personalitmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\personalitmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -66,8 +62,7 @@
               "RelativeToolTip": "PersonalItManagement.Api\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-25T21:27:25.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T21:27:25.625Z"
             },
             {
               "$type": "Document",
@@ -79,8 +74,7 @@
               "RelativeToolTip": "PersonalItManagement.Api\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-25T21:26:59.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T21:26:59.691Z"
             },
             {
               "$type": "Document",
@@ -92,21 +86,19 @@
               "RelativeToolTip": "PersonalItManagement.Data\\Context\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T18:57:35.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T18:57:35.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PersonalItManagement.Api",
+              "DocumentIndex": 4,
+              "Title": "PersonalItManagement.Api.csproj",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
               "RelativeDocumentMoniker": "PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
               "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
               "RelativeToolTip": "PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-25T19:10:57.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T19:10:57.186Z"
             },
             {
               "$type": "Document",
@@ -116,36 +108,22 @@
               "RelativeDocumentMoniker": "PersonalItManagement.Api\\Program.cs",
               "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Program.cs",
               "RelativeToolTip": "PersonalItManagement.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAwAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-25T18:03:30.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PersonalItManagement.Data",
+              "DocumentIndex": 5,
+              "Title": "PersonalItManagement.Data.csproj",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\PersonalItManagement.Data.csproj",
               "RelativeDocumentMoniker": "PersonalItManagement.Data\\PersonalItManagement.Data.csproj",
               "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\PersonalItManagement.Data.csproj",
               "RelativeToolTip": "PersonalItManagement.Data\\PersonalItManagement.Data.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-25T19:00:44.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20241225191127_init.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Migrations\\20241225191127_init.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Migrations\\20241225191127_init.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Migrations\\20241225191127_init.cs",
-              "RelativeToolTip": "PersonalItManagement.Data\\Migrations\\20241225191127_init.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T19:11:27.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T19:00:44.019Z"
             }
           ]
         }

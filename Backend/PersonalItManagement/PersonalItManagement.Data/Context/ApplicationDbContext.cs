@@ -5,7 +5,7 @@ using PersonalItManagement.Models;
 
 namespace PersonalITManagement.Data.Context
 {
-    public class ApplicationDbContext : IdentityDbContext<User, IdentityRole, string>
+    public class ApplicationDbContext : IdentityDbContext<AppUser, IdentityRole, string>
     {
         // Конструктор із параметрами для передачі конфігурації
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
@@ -25,9 +25,9 @@ namespace PersonalITManagement.Data.Context
 
             // Зв'язок 1:1 між Employee і User
             modelBuilder.Entity<Employee>()
-                .HasOne(e => e.User)
+                .HasOne(e => e.AppUser)
                 .WithOne()
-                .HasForeignKey<Employee>(e => e.UserId);
+                .HasForeignKey<Employee>(e => e.AppUserId);
 
             // Зв'язок 1:N між Order і Employee
             modelBuilder.Entity<Order>()
