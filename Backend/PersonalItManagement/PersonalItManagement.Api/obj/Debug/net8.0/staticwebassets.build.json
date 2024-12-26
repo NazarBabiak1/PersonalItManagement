@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "dLi1f1iI0agGWrshYtmme/jTjfyb4UlumzUxH+2NkxM=",
+  "Source": "PersonalItManagement.Api",
+  "BasePath": "_content/PersonalItManagement.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
