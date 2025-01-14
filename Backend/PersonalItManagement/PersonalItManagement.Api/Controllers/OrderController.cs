@@ -29,7 +29,6 @@ namespace PersonalItManagement.Api.Controllers
                     o.Discount,
                     o.PaidAmount,
                     o.RemainingAmount,
-                    o.Status.Name,
                     Employees = o.Employees.Select(e => new { e.Id, e.AppUser.UserName, e.Percentage }),
                     Equipments = o.Equipments.Select(e => new { e.Id, e.Name, e.Count, e.Price }),
                     Materials = o.Materials.Select(m => new { m.Id, m.Name, m.Count, m.Price }),

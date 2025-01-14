@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using PersonalItManagement.Models;
+using PersonalItManagement.Services.Interfaces;
+using PersonalItManagement.Services.Services;
 using PersonalITManagement.Data.Context;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,6 +53,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<AppUser>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IEquipmentService, EquipmentService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 var app = builder.Build();
 

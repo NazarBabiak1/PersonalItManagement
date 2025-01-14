@@ -1675,6 +1675,19 @@
         "runtime": {
           "bin/placeholder/PersonalItManagement.Data.dll": {}
         }
+      },
+      "PersonalItManagement.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "PersonalItManagement.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PersonalItManagement.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PersonalItManagement.Services.dll": {}
+        }
       }
     }
   },
@@ -4687,12 +4700,18 @@
       "type": "project",
       "path": "../PersonalItManagement.Data/PersonalItManagement.Data.csproj",
       "msbuildProject": "../PersonalItManagement.Data/PersonalItManagement.Data.csproj"
+    },
+    "PersonalItManagement.Services/1.0.0": {
+      "type": "project",
+      "path": "../PersonalItManagement.Services/PersonalItManagement.Services.csproj",
+      "msbuildProject": "../PersonalItManagement.Services/PersonalItManagement.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.EntityFrameworkCore.Design >= 8.0.7",
       "PersonalItManagement.Data >= 1.0.0",
+      "PersonalItManagement.Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -4731,6 +4750,9 @@
           "projectReferences": {
             "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\PersonalItManagement.Data.csproj": {
               "projectPath": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\PersonalItManagement.Data.csproj"
+            },
+            "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\PersonalItManagement.Services.csproj": {
+              "projectPath": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\PersonalItManagement.Services.csproj"
             }
           }
         }

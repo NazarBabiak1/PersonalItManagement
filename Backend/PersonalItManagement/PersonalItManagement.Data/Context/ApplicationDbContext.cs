@@ -18,7 +18,7 @@ namespace PersonalITManagement.Data.Context
         public DbSet<Order> Orders { get; set; }
         public DbSet<Work> Works { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
-        public DbSet<ProfitDistribution> ProfitDistributions { get; set; }}
+        public DbSet<ProfitDistribution> ProfitDistributions { get; set; }
 
         // Налаштування моделі
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\controllers\\equipmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\controllers\\equipmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\models\\work.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\models\\work.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\models\\profitdestribtion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\models\\profitdestribtion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\personalitmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\personalitmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,20 +27,68 @@
       "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\migrations\\20250105084328_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\migrations\\20250105084328_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\models\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.services\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|solutionrelative:personalitmanagement.services\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\models\\profitdestribtion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\models\\profitdestribtion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\personalitmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\personalitmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.services\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|solutionrelative:personalitmanagement.services\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.services\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|solutionrelative:personalitmanagement.services\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|solutionrelative:personalitmanagement.services\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.services\\interfaces\\iequipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|solutionrelative:personalitmanagement.services\\interfaces\\iequipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.services\\interfaces\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4556067D-7480-46BA-85B3-A4E2D51BAFE2}|PersonalItManagement.Services\\PersonalItManagement.Services.csproj|solutionrelative:personalitmanagement.services\\interfaces\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\controllers\\equipmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\controllers\\equipmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.data\\models\\work.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FE08816-B22C-4905-95E1-1EDE880F351B}|PersonalItManagement.Data\\PersonalItManagement.Data.csproj|solutionrelative:personalitmanagement.data\\models\\work.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|solutionrelative:personalitmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FB6B9A6-3526-46BF-A1FC-BEE26F839BCD}|PersonalItManagement.Api\\PersonalItManagement.Api.csproj|c:\\users\\dimab\\source\\repos\\personalitmanagement\\backend\\personalitmanagement\\personalitmanagement.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -78,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,85 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EquipmentsController.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EquipmentsController.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Controllers\\EquipmentsController.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EquipmentsController.cs*",
-              "RelativeToolTip": "PersonalItManagement.Api\\Controllers\\EquipmentsController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T21:47:59.505Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EmployeesController.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EmployeesController.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Controllers\\EmployeesController.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EmployeesController.cs*",
-              "RelativeToolTip": "PersonalItManagement.Api\\Controllers\\EmployeesController.cs*",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwDoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T21:47:03.368Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\OrderController.cs*",
-              "RelativeToolTip": "PersonalItManagement.Api\\Controllers\\OrderController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T21:45:52.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Materials.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Materials.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Materials.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Materials.cs",
-              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Materials.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T10:49:14.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Order.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Order.cs",
-              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Order.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA0wBkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T10:37:08.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Equipment.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Equipment.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Equipment.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Equipment.cs",
-              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Equipment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T10:36:53.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Employee.cs",
@@ -185,46 +135,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderStatus.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\OrderStatus.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\OrderStatus.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\OrderStatus.cs",
-              "RelativeToolTip": "PersonalItManagement.Data\\Models\\OrderStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T10:37:16.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProfitDestribtion.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
-              "RelativeToolTip": "PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:09:23.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Work.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Work.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Work.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Work.cs",
-              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Work.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Title": "Equipment.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Equipment.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Equipment.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Equipment.cs",
+              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Equipment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T11:03:49.332Z",
+              "WhenOpened": "2025-01-03T10:36:53.084Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
+              "Title": "Materials.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Materials.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Materials.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Materials.cs",
+              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Materials.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T10:49:14.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Order.cs",
+              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Order.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T10:37:08.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersonalItManagement.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
+              "RelativeDocumentMoniker": "PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
+              "RelativeToolTip": "PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-25T19:10:57.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\AppUser.cs",
               "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\AppUser.cs",
@@ -237,20 +200,187 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "PersonalItManagement.Api\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAvwCYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T21:45:52.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20250105084328_init.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Migrations\\20250105084328_init.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Migrations\\20250105084328_init.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Migrations\\20250105084328_init.cs",
+              "RelativeToolTip": "PersonalItManagement.Data\\Migrations\\20250105084328_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T08:43:29.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Services\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Services\\OrderService.cs",
+              "RelativeToolTip": "PersonalItManagement.Services\\Services\\OrderService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwBoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T22:23:39.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Program.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Program.cs",
+              "RelativeToolTip": "PersonalItManagement.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T18:03:30.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\OrderStatus.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\OrderStatus.cs",
+              "RelativeToolTip": "PersonalItManagement.Data\\Models\\OrderStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T10:37:16.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EquipmentService.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Services\\EquipmentService.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Services\\Services\\EquipmentService.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Services\\EquipmentService.cs",
+              "RelativeToolTip": "PersonalItManagement.Services\\Services\\EquipmentService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T22:22:15.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Services\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Services\\Services\\EmployeeService.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Services\\EmployeeService.cs",
+              "RelativeToolTip": "PersonalItManagement.Services\\Services\\EmployeeService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T22:20:31.427Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Interfaces\\IOrderService.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Services\\Interfaces\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Interfaces\\IOrderService.cs",
+              "RelativeToolTip": "PersonalItManagement.Services\\Interfaces\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T22:23:21.907Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Context\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "PersonalItManagement.Data\\Context\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Context\\ApplicationDbContext.cs",
               "RelativeToolTip": "PersonalItManagement.Data\\Context\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABEAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAD4vxQAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T18:57:35.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-25T18:57:35.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 10,
+              "Title": "ProfitDestribtion.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
+              "RelativeToolTip": "PersonalItManagement.Data\\Models\\ProfitDestribtion.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAvwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T11:09:23.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IEquipmentService.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Interfaces\\IEquipmentService.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Services\\Interfaces\\IEquipmentService.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Interfaces\\IEquipmentService.cs",
+              "RelativeToolTip": "PersonalItManagement.Services\\Interfaces\\IEquipmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T22:21:50.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IEmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Interfaces\\IEmployeeService.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Services\\Interfaces\\IEmployeeService.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\Interfaces\\IEmployeeService.cs",
+              "RelativeToolTip": "PersonalItManagement.Services\\Interfaces\\IEmployeeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T22:19:14.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EquipmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EquipmentsController.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Controllers\\EquipmentsController.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EquipmentsController.cs",
+              "RelativeToolTip": "PersonalItManagement.Api\\Controllers\\EquipmentsController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAkwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T21:47:59.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "PersonalItManagement.Api\\Controllers\\EmployeesController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T21:47:03.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Work.cs",
+              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Work.cs",
+              "RelativeDocumentMoniker": "PersonalItManagement.Data\\Models\\Work.cs",
+              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\Models\\Work.cs",
+              "RelativeToolTip": "PersonalItManagement.Data\\Models\\Work.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T11:03:49.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "PersonalItManagement.Api\\appsettings.Development.json",
@@ -262,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\appsettings.json",
               "RelativeDocumentMoniker": "PersonalItManagement.Api\\appsettings.json",
@@ -274,31 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PersonalItManagement.Api.csproj",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
-              "RelativeDocumentMoniker": "PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
-              "RelativeToolTip": "PersonalItManagement.Api\\PersonalItManagement.Api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-25T19:10:57.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Program.cs",
-              "RelativeDocumentMoniker": "PersonalItManagement.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Api\\Program.cs",
-              "RelativeToolTip": "PersonalItManagement.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-25T18:03:30.751Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "PersonalItManagement.Data.csproj",
               "DocumentMoniker": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Data\\PersonalItManagement.Data.csproj",
               "RelativeDocumentMoniker": "PersonalItManagement.Data\\PersonalItManagement.Data.csproj",
@@ -306,7 +412,8 @@
               "RelativeToolTip": "PersonalItManagement.Data\\PersonalItManagement.Data.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-25T19:00:44.019Z"
+              "WhenOpened": "2024-12-25T19:00:44.019Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -12,7 +12,7 @@ using PersonalITManagement.Data.Context;
 namespace PersonalItManagement.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241226152157_init")]
+    [Migration("20250105084328_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -158,6 +158,84 @@ namespace PersonalItManagement.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PersonalItManagement.Data.Models.Material", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Materials");
+                });
+
+            modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("ProfitDistributions");
+                });
+
+            modelBuilder.Entity("PersonalItManagement.Data.Models.Work", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Cost")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Works");
+                });
+
             modelBuilder.Entity("PersonalItManagement.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -246,8 +324,7 @@ namespace PersonalItManagement.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId")
-                        .IsUnique();
+                    b.HasIndex("AppUserId");
 
                     b.HasIndex("OrderId");
 
@@ -272,8 +349,8 @@ namespace PersonalItManagement.Data.Migrations
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -290,9 +367,12 @@ namespace PersonalItManagement.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -301,8 +381,14 @@ namespace PersonalItManagement.Data.Migrations
                     b.Property<int>("OrderStatusId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("PaidAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("RemainingAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -379,11 +465,38 @@ namespace PersonalItManagement.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PersonalItManagement.Data.Models.Material", b =>
+                {
+                    b.HasOne("PersonalItManagement.Models.Order", null)
+                        .WithMany("Materials")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>
+                {
+                    b.HasOne("PersonalItManagement.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("PersonalItManagement.Data.Models.Work", b =>
+                {
+                    b.HasOne("PersonalItManagement.Models.Order", null)
+                        .WithMany("Works")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("PersonalItManagement.Models.Employee", b =>
                 {
                     b.HasOne("PersonalItManagement.Models.AppUser", "AppUser")
-                        .WithOne()
-                        .HasForeignKey("PersonalItManagement.Models.Employee", "AppUserId")
+                        .WithMany()
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -408,7 +521,7 @@ namespace PersonalItManagement.Data.Migrations
                     b.HasOne("PersonalItManagement.Models.OrderStatus", "Status")
                         .WithMany()
                         .HasForeignKey("OrderStatusId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Status");
@@ -419,6 +532,10 @@ namespace PersonalItManagement.Data.Migrations
                     b.Navigation("Employees");
 
                     b.Navigation("Equipments");
+
+                    b.Navigation("Materials");
+
+                    b.Navigation("Works");
                 });
 #pragma warning restore 612, 618
         }

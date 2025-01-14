@@ -147,3 +147,5 @@ C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\Pe
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Services.dll
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Services.pdb

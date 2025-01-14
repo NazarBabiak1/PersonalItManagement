@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersonalItManagement.Data\PersonalItManagement.Data.csproj" />
+    <ProjectReference Include="..\PersonalItManagement.Services\PersonalItManagement.Services.csproj" />
   </ItemGroup>
 
 </Project>

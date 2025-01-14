@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalItManagement.Api", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalItManagement.Data", "PersonalItManagement.Data\PersonalItManagement.Data.csproj", "{6FE08816-B22C-4905-95E1-1EDE880F351B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalItManagement.Services", "PersonalItManagement.Services\PersonalItManagement.Services.csproj", "{4556067D-7480-46BA-85B3-A4E2D51BAFE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6FE08816-B22C-4905-95E1-1EDE880F351B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FE08816-B22C-4905-95E1-1EDE880F351B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FE08816-B22C-4905-95E1-1EDE880F351B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4556067D-7480-46BA-85B3-A4E2D51BAFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4556067D-7480-46BA-85B3-A4E2D51BAFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4556067D-7480-46BA-85B3-A4E2D51BAFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4556067D-7480-46BA-85B3-A4E2D51BAFE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

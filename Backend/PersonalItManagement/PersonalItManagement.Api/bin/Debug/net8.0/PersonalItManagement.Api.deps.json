@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "8.0.7",
           "PersonalItManagement.Data": "1.0.0",
+          "PersonalItManagement.Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.6.2"
         },
         "runtime": {
@@ -975,6 +976,17 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "PersonalItManagement.Services/1.0.0": {
+        "dependencies": {
+          "PersonalItManagement.Data": "1.0.0"
+        },
+        "runtime": {
+          "PersonalItManagement.Services.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1587,6 +1599,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "PersonalItManagement.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PersonalItManagement.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -16,4 +16,4 @@ namespace PersonalItManagement.Data.Models
         public decimal Amount { get; set; } // Сума прибутку
     }
 }
-}
+
