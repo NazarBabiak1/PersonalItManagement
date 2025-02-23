@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import {EmployeeTableComponent} from '../employees-table/employees-table.component';
+import { ResponsiveTableComponent } from '../employees-table/employees-table.component';
 
 @Component({
   selector: 'app-employees',
   standalone: true,
-  imports: [
-    EmployeeTableComponent
-  ],
-  templateUrl: './employees.component.html',
-  styleUrl: './employees.component.css'
+  imports: [ResponsiveTableComponent],
+  template: `
+    <h1>Співробітники</h1>
+    <app-responsive-table></app-responsive-table>
+  `
 })
-export class EmployeesComponent {
-
-}
+export class EmployeesComponent {}
