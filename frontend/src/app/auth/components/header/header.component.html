@@ -1,0 +1,31 @@
+<header class="main-header">
+  <nav class="nav-container">
+    <div class="burger-menu" (click)="toggleMenu()">
+      ☰
+    </div>
+
+    <ul class="nav-list" [ngClass]="{'open': isMenuOpen}">
+      <li class="nav-item">
+        <a routerLink="/orders" routerLinkActive="active">ЗАМОВЛЕННЯ</a>
+      </li>
+      <li class="nav-item admin-panel" *ngIf="isAdmin">
+        <a routerLink="/admin-panel" routerLinkActive="active">ПАНЕЛЬ АДМІНІСТРАТОРА</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/equipment" routerLinkActive="active">ОБЛАДНАННЯ</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/employees" routerLinkActive="active">ПРАЦІВНИКИ</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/materials" routerLinkActive="active">МАТЕРІАЛИ</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/reports" routerLinkActive="active">ЗВІТИ</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/profile" routerLinkActive="active">МІЙ ПРОФІЛЬ</a>
+      </li>
+    </ul>
+  </nav>
+</header>

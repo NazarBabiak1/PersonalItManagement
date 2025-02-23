@@ -1,0 +1,55 @@
+/* order-table.component.scss */
+.order-container {
+  padding: 16px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  .search-bar {
+    margin-bottom: 16px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .mobile-table {
+    width: 100%;
+    overflow-x: auto;
+
+    @media (max-width: 600px) {
+      .mat-header-row, .mat-row {
+        display: block;
+        margin-bottom: 12px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .mat-cell {
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        border: none;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      .mobile-label {
+        font-weight: 500;
+        margin-right: 8px;
+        color: #666;
+        min-width: 100px;
+      }
+    }
+
+    @media (min-width: 601px) {
+      .mat-cell {
+        padding: 16px;
+      }
+    }
+  }
+}

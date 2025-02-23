@@ -1,0 +1,28 @@
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Вхід</h1>
+      <p>Залишайтеся на зв’язку зі своїм професійним світом</p>
+  <!-- Модальне вікно для реєстрації працівників -->
+  <div class="modal" *ngIf="showRegisterModal">
+    <div class="modal-content">
+      <h2>Реєстрація працівника</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div class="input-group">
+          <input type="text" formControlName="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <input type="password" formControlName="password" placeholder="Пароль" required>
+        </div>
+        <div class="input-group">
+          <select formControlName="role">
+            <option value="employee">Працівник</option>
+            <option value="admin">Адміністратор</option>
+          </select>
+        </div>
+        <button type="submit" class="login-btn" [disabled]="registerForm.invalid">Зареєструвати</button>
+        <button type="button" class="signup-btn" (click)="closeRegisterModal()">Закрити</button>
+      </form>
+    </div>
+  </div>
+    </div>
+  </div>

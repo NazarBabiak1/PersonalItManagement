@@ -1,0 +1,60 @@
+<!-- order-table.component.html -->
+<div class="order-container">
+  <div class="search-bar">
+    <mat-form-field appearance="outline" class="full-width">
+
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter orders">
+    </mat-form-field>
+  </div>
+
+  <mat-table [dataSource]="dataSource" matSort class="mobile-table">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <div class="mobile-label">ID:</div> {{element.id}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <div class="mobile-label">Name:</div> {{element.name}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Total Price Column -->
+    <ng-container matColumnDef="totalPrice">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Total Price </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <div class="mobile-label">Total Price:</div> ${{element.totalPrice | number:'1.2-2'}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>І
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" aria-label="View details">
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Select page">
+  </mat-paginator>
+</div>
