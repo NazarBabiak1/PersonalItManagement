@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ResponsiveTableComponent } from '../employees-table/employees-table.component';
+import {Component} from '@angular/core';
+import {ResponsiveTableComponent} from '../employees-table/employees-table.component';
 
 @Component({
   selector: 'app-employees',
@@ -10,4 +10,5 @@ import { ResponsiveTableComponent } from '../employees-table/employees-table.com
     <app-responsive-table></app-responsive-table>
   `
 })
-export class EmployeesComponent {}
+export class EmployeesComponent {
+}

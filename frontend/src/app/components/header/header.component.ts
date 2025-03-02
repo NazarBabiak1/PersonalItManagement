@@ -1,26 +1,29 @@
-// header.component.ts
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import {NgClass, NgIf} from '@angular/common'; // Імпортуємо RouterModule
+import {Component} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   standalone: true,
-  imports: [RouterModule, NgClass, NgIf], // Додаємо RouterModule до imports
+  imports: [RouterModule, NgClass, NgIf],
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   isAdmin: boolean = false;
   isUser: boolean = false;
-  isMenuOpen = false;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+  isMenuOpen: boolean = false;
 
   constructor() {
     this.checkUserRole();
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 
   checkUserRole(): void {

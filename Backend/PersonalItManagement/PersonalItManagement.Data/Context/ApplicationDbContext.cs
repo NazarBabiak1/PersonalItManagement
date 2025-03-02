@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 using PersonalItManagement.Data.Models;
 using PersonalItManagement.Models;
 
@@ -65,6 +67,38 @@ namespace PersonalITManagement.Data.Context
                 .WithMany()
                 .HasForeignKey(p => p.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Material>()
+    .Property(m => m.Price)
+    .HasPrecision(18, 2);  // Точність 18, масштаб 2
+
+            modelBuilder.Entity<ProfitDistribution>()
+                .Property(p => p.Amount)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Work>()
+                .Property(w => w.Cost)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Equipment>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.Discount)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.PaidAmount)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.RemainingAmount)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.TotalPrice)
+                .HasPrecision(18, 2);
+
         }
     }
 }

@@ -6,6 +6,18 @@ using PersonalItManagement.Services.Services;
 using PersonalITManagement.Data.Context;
 var builder = WebApplication.CreateBuilder(args);
 
+
+// Додаємо CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();

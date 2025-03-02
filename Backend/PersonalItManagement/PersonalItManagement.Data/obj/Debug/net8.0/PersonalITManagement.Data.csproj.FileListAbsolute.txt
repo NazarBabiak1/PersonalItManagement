@@ -21,9 +21,9 @@ C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\Pe
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.AssemblyInfoInputs.cache
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.AssemblyInfo.cs
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.csproj.CoreCompileInputs.cache
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.sourcelink.json
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\refint\PersonalItManagement.Data.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.pdb
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.genruntimeconfig.cache
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\ref\PersonalItManagement.Data.dll
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Data\obj\Debug\net8.0\PersonalItManagement.Data.sourcelink.json

@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {LoginComponent} from '../login/login.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [],
+  imports: [
+    LoginComponent
+  ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
