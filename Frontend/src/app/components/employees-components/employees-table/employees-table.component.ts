@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {EmployeeService} from '../../services/employee.service';
+import {EmployeeService} from '../../../services/employee.service';
+import {Employee} from '../../../Models/Employee';
 
 @Component({
   selector: 'app-responsive-table',
@@ -8,7 +9,7 @@ import {EmployeeService} from '../../services/employee.service';
   imports: [CommonModule],
   providers: [EmployeeService], // Додаємо сервіс як провайдер
   templateUrl: './employees-table.component.html',
-  styleUrls: ['./employees-table.component.scss']
+  styleUrl: './employees-table.component.scss',
 })
 export class ResponsiveTableComponent implements OnInit {
   data: Employee[] = []; // Ініціалізуємо порожнім масивом
@@ -45,10 +46,4 @@ export class ResponsiveTableComponent implements OnInit {
   }
 }
 
-export interface Employee {
-  id: number;
-  userName: string;
-  percentage: number;
-  expanded?: boolean;
-}
 
