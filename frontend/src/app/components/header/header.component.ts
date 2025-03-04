@@ -26,6 +26,13 @@ export class HeaderComponent {
     this.isMenuOpen = false;
   }
 
+  handleNavClick(): void {
+    // Закриваємо меню лише якщо ширина екрану менша за 770px
+    if (window.innerWidth <= 770) {
+      this.closeMenu();
+    }
+  }
+
   checkUserRole(): void {
     const userRole = localStorage.getItem('userRole');
 

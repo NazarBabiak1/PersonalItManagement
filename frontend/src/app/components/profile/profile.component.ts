@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {LoginComponent} from '../login/login.component';
+import {LoginComponent} from '../auth-components/login/login.component';
 
 @Component({
   selector: 'app-profile',

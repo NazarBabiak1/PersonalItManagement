@@ -66,12 +66,11 @@
 
 /* Бургер-іконка за замовчуванням прихована */
 .burger-menu {
-  left: 20px;
+  padding: 15px;
   font-size: 30px;
   color: white;
   cursor: pointer;
   display: none;
-  height: 50px;
   align-items: center;
 }
 
