@@ -14,14 +14,15 @@
 }
 
 .page-header {
+  font-family: 'Playfair Display', serif; /* Новий елегантний шрифт для "Замовлення" */
   background: linear-gradient(90deg, #000000, #1a1a1a); /* Градієнт для ефекту преміум */
   color: #ffffff;
   font-size: 32px; /* Збільшено для більшого впливу */
-  font-weight: 500; /* Легша вага для елегантності */
+  font-weight: 600; /* Змінив вага для більшої виразності */
   padding: 20px 0; /* Зменшено горизонтальні відступи для повної ширини */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center; /* Змінив на центрування тексту "Замовлення" */
+  align-items: center; /* Центрування по вертикалі */
   width: 100%; /* Повна ширина без margin */
   border-bottom: 2px solid #4CAF50; /* Зелена межа для акценту */
   border-radius: 0; /* Прибрано заокруглення */
@@ -152,4 +153,20 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.page-header {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(90deg, #000000, #1a1a1a);
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; /* Повертаємо для кнопки праворуч */
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid #4CAF50;
+  border-radius: 0;
+  transition: all 0.3s ease;
 }

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using PersonalItManagement.Models;
 using PersonalItManagement.Services.Interfaces;
@@ -59,7 +60,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PersonItDb"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PersonItDb"));
 });
 
 builder.Services.AddAuthorization();

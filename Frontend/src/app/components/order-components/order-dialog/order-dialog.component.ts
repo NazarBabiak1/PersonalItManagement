@@ -1,27 +1,25 @@
-import {Component, Inject} from '@angular/core'; // Додаємо Inject для доступу до MAT_DIALOG_DATA
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {NgIf} from '@angular/common';
-import {OrderService} from '../../../services/order-controller.service';
-import {Order} from '../../../Models/Order';
+import {OrderService} from '../../../services/order-controller.service'; // Імпортуємо сервіс
+import {Order} from '../../../Models/Order'; // Імпортуємо модель
 
 @Component({
   selector: 'app-order-dialog',
   standalone: true,
   imports: [ReactiveFormsModule, MatDialogModule, NgIf],
-  templateUrl: './order-dialog.component.html',
+  templateUrl: 'order-dialog.component.html',
   styleUrls: ['./order-dialog.component.scss'],
 })
 export class OrderDialogComponent {
   orderForm: FormGroup;
-  editingOrder: Order | null = null; // Для редагування, типізований як Order
+  editingOrder: any = null; // Для редагування (якщо потрібно)
 
-  // Оголошуємо властивість data, яка буде отримувати дані через MAT_DIALOG_DATA
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<OrderDialogComponent>,
-    private orderService: OrderService,
-    @Inject(MAT_DIALOG_DATA) public data: Order | null // Додаємо data як вхідний параметр
+    private orderService: OrderService // Ін'екція сервісу
   ) {
     this.orderForm = this.fb.group({
       name: ['', Validators.required],
@@ -37,41 +35,21 @@ export class OrderDialogComponent {
     });
   }
 
-  ngOnInit() {
-    // Використовуємо this.data замість this.dialogRef.componentInstance.data
-    if (this.data) {
-      this.editingOrder = this.data;
-      this.orderForm.patchValue(this.data);
-    }
-  }
 
   onSubmit(): void {
     if (this.orderForm.valid) {
-      const orderData: Order = this.orderForm.value;
+      const newOrder: Order = this.orderForm.value;
 
-      if (this.editingOrder && this.editingOrder.id) {
-        // Редагування існуючого замовлення
-        this.orderService.updateOrder(orderData).subscribe(
-          (updatedOrder) => {
-            console.log('Замовлення оновлено:', updatedOrder);
-            this.dialogRef.close(updatedOrder); // Закриваємо діалог і повертаємо оновлений об'єкт
-          },
-          (error) => {
-            console.error('Помилка при оновленні замовлення:', error);
-          }
-        );
-      } else {
-        // Додавання нового замовлення
-        this.orderService.addOrder(orderData).subscribe(
-          (newOrder) => {
-            console.log('Замовлення додано:', newOrder);
-            this.dialogRef.close(newOrder); // Закриваємо діалог і повертаємо новий об'єкт
-          },
-          (error) => {
-            console.error('Помилка при додаванні замовлення:', error);
-          }
-        );
-      }
+      // Використовуємо сервіс для додавання замовлення
+      this.orderService.addOrder(newOrder).subscribe(
+        (order) => {
+          console.log('Замовлення додано:', order);
+          this.dialogRef.close(order); // Закриваємо діалог і повертаємо об'єкт
+        },
+        (error) => {
+          console.error('Помилка при додаванні замовлення:', error);
+        }
+      );
     }
   }
 

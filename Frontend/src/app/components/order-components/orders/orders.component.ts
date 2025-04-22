@@ -1,41 +1,24 @@
 import {Component} from '@angular/core';
 import {ResponsiveTableComponent} from '../order-table/order-table.component';
-import {OrderDialogComponent} from '../order-dialog/order-dialog.component';
-import {MatDialog} from '@angular/material/dialog';
+import {KanbanModule} from '@syncfusion/ej2-angular-kanban';
 
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [ResponsiveTableComponent],
+  imports: [ResponsiveTableComponent, KanbanModule],
   template: `
-    <div class="page-container">
-      <div class="page-header">
-        <span>Замовлення</span>
-        <button class="add-button" (click)="openOrderDialog()">Додати</button>
-      </div>
-      <div class="table-container">
-        <app-responsive-table></app-responsive-table>
-      </div>
-    </div>
+    <app-responsive-table></app-responsive-table>
   `,
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent {
-  constructor(private dialog: MatDialog) {
-  }
-
-  openOrderDialog(): void {
-    const dialogRef = this.dialog.open(OrderDialogComponent, {
-      width: '620px', // Збільшено до 620px для узгодженості з шириною сторінки
-      height: 'auto',
-      panelClass: 'no-round-dialog'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('Нове замовлення додано:', result);
-        // Тут можна додати логіку для додавання замовлення до списку
-      }
-    });
-  }
+  public kanbanData: Object[] = [
+    {Id: 'Task 1', Status: 'Open', Summary: 'Design login page', Assignee: 'John'},
+    {Id: 'Task 2', Status: 'InProgress', Summary: 'API Integration', Assignee: 'Doe'},
+    {Id: 'Task 3', Status: 'Close', Summary: 'Deploy to production', Assignee: 'Smith'}
+  ];
+  public cardSettings: Object = {
+    contentField: 'Summary',
+    headerField: 'Id'
+  };
 }
