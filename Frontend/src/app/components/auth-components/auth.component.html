@@ -1,0 +1,50 @@
+<div class="login-container">
+  <div class="login-box">
+    <h1 *ngIf="!isRegisterMode">Вхід</h1>
+    <h1 *ngIf="isRegisterMode">Реєстрація</h1>
+    <p *ngIf="!isRegisterMode">Залишайтеся на зв’язку зі своїм професійним світом</p>
+    <p *ngIf="isRegisterMode">Створіть акаунт для доступу</p>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="authForm">
+      <div class="input-group">
+        <input formControlName="username" placeholder="Логін" required type="text">
+        <div *ngIf="authForm.get('username')?.invalid && authForm.get('username')?.touched">
+          <small class="error">Введіть правильний логін</small>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <input formControlName="password" placeholder="Пароль" required type="password">
+        <div *ngIf="authForm.get('password')?.invalid && authForm.get('password')?.touched">
+          <small class="error">Пароль повинен містити мінімум 6 символів</small>
+        </div>
+      </div>
+
+      <div *ngIf="isRegisterMode" class="input-group">
+        <select formControlName="role" required>
+          <option disabled selected value="">Оберіть роль</option>
+          <option value="Commandant">Комендант</option>
+          <option value="Castelian">Кастелян</option>
+          <option value="Student">Студент</option>
+        </select>
+        <div *ngIf="authForm.get('role')?.invalid && authForm.get('role')?.touched">
+          <small class="error">Оберіть роль</small>
+        </div>
+      </div>
+
+      <a *ngIf="!isRegisterMode" class="forgot-password" href="#">Забули пароль?</a>
+      <button [disabled]="authForm.invalid" class="login-btn"
+              type="submit">{{ isRegisterMode ? 'Зареєструватися' : 'Увійти' }}
+      </button>
+    </form>
+
+    <div *ngIf="errorMessage" class="error-message">
+      <small>{{ errorMessage }}</small>
+    </div>
+
+    <div class="divider"><span>або</span></div>
+    <button (click)="toggleMode()"
+            class="signup-btn">{{ isRegisterMode ? 'Маєте акаунт? Увійти' : 'Створити акаунт' }}
+    </button>
+  </div>
+</div>
