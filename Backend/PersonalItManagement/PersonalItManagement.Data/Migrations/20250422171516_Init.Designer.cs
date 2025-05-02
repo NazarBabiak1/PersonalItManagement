@@ -12,7 +12,7 @@ using PersonalITManagement.Data.Context;
 namespace PersonalItManagement.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250422152934_Init")]
+    [Migration("20250422171516_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -49,6 +49,20 @@ namespace PersonalItManagement.Data.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

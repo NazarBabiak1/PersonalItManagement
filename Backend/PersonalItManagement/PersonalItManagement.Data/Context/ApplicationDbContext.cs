@@ -99,6 +99,10 @@ namespace PersonalITManagement.Data.Context
                 .Property(o => o.TotalPrice)
                 .HasPrecision(18, 2);
 
+            modelBuilder.Entity<IdentityRole>().HasData(
+               new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
+               new IdentityRole { Id = "2", Name = "User", NormalizedName = "USER" }
+           );
         }
     }
 }

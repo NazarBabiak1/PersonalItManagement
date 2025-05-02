@@ -1,21 +1,21 @@
 import {Component} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {NgClass, NgIf} from '@angular/common';
+import {NgClass} from '@angular/common';
+import {AuthService} from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   standalone: true,
-  imports: [RouterModule, NgClass, NgIf],
-  styleUrls: ['./header.component.css']
+  imports: [RouterModule, NgClass],
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isAdmin: boolean = false;
-  isUser: boolean = false;
   isMenuOpen: boolean = false;
+  dropdownOpen = false;
 
-  constructor() {
-    this.checkUserRole();
+  constructor(public authService: AuthService) {
   }
 
   toggleMenu(): void {
@@ -33,13 +33,13 @@ export class HeaderComponent {
     }
   }
 
-  checkUserRole(): void {
-    const userRole = localStorage.getItem('userRole');
-
-    if (userRole === 'admin') {
-      this.isAdmin = true;
-    } else if (userRole === 'user') {
-      this.isUser = true;
-    }
+  onLogout() {
+    this.authService.logout();
   }
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+
 }

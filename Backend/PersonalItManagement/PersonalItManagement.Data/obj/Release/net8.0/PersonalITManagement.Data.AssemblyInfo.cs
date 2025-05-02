@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PersonalItManagement.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d96c41d5b040fc1ba4d581a192f0f9e56a7798b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f6fbfc53914491c84c0808425a919041383955f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PersonalItManagement.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PersonalItManagement.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

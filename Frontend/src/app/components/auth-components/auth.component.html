@@ -23,9 +23,9 @@
       <div *ngIf="isRegisterMode" class="input-group">
         <select formControlName="role" required>
           <option disabled selected value="">Оберіть роль</option>
-          <option value="Commandant">Комендант</option>
-          <option value="Castelian">Кастелян</option>
-          <option value="Student">Студент</option>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+
         </select>
         <div *ngIf="authForm.get('role')?.invalid && authForm.get('role')?.touched">
           <small class="error">Оберіть роль</small>

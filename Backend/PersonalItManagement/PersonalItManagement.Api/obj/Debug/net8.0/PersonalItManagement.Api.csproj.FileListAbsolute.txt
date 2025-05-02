@@ -151,3 +151,6 @@ C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\Pe
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\ref\PersonalItManagement.Api.dll
 C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Npgsql.dll
 C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

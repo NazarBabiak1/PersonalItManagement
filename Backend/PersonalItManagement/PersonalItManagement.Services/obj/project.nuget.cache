@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1bVF6WpYYUc=",
+  "dgSpecHash": "FR5kb1SXacg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dimab\\Source\\Repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\PersonalItManagement.Services.csproj",
+  "projectFilePath": "C:\\Users\\dimab\\source\\repos\\PersonalItManagement\\Backend\\PersonalItManagement\\PersonalItManagement.Services\\PersonalItManagement.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dimab\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\dimab\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

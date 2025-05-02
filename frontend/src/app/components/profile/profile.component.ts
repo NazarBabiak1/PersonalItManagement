@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-import {LoginComponent} from '../auth-components/login/login.component';
+import {AuthorizationComponent} from '../auth-components/auth.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
   imports: [
-    LoginComponent
+    AuthorizationComponent
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
