@@ -9,7 +9,7 @@ import {AuthService} from '../../services/auth.service';
   templateUrl: './header.component.html',
   standalone: true,
   imports: [RouterModule, NgClass],
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   isMenuOpen: boolean = false;

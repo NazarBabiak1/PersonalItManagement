@@ -23,7 +23,7 @@ namespace PersonalItManagement.Api.Controllers
                 .Select(e => new
                 {
                     e.Id,
-                    e.AppUser.UserName,
+                    e.User.UserName,
                     e.Percentage
                 }).ToList();
 

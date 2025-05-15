@@ -6,9 +6,12 @@ C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\Pe
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Api.runtimeconfig.json
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Api.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Api.pdb
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Humanizer.dll
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -39,6 +42,8 @@ C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\Pe
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Npgsql.dll
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -149,8 +154,3 @@ C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\Pe
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.pdb
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.genruntimeconfig.cache
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\ref\PersonalItManagement.Api.dll
-C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Npgsql.dll
-C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
-C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\dimab\Source\Repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

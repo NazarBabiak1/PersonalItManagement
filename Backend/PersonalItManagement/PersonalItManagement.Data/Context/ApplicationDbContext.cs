@@ -8,7 +8,7 @@ using PersonalItManagement.Models;
 
 namespace PersonalITManagement.Data.Context
 {
-    public class ApplicationDbContext : IdentityDbContext<AppUser, IdentityRole, string>
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         // Конструктор із параметрами для передачі конфігурації
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
@@ -29,9 +29,9 @@ namespace PersonalITManagement.Data.Context
 
             // Employee
             modelBuilder.Entity<Employee>()
-                .HasOne(e => e.AppUser)
+                .HasOne(e => e.User)
                 .WithMany()
-                .HasForeignKey(e => e.AppUserId)
+                .HasForeignKey(e => e.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Order
