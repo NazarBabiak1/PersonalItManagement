@@ -5,7 +5,6 @@ using PersonalItManagement.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "PersonalIT API", Version = "v1" });
