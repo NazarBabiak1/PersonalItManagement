@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PersonalItManagement.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e76ab26a16a9aab4b3f722a372c8ddb87982d606")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+471cbb5688a6ee54cf049ab10b62452271560cbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("PersonalItManagement.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PersonalItManagement.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
