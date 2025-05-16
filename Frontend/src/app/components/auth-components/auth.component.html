@@ -24,7 +24,8 @@
         <select formControlName="role" required>
           <option disabled selected value="">Оберіть роль</option>
           <option value="Admin">Admin</option>
-          <option value="User">User</option>
+          <option value="Admin">Manager</option>
+          <option value="User">Mounter</option>
 
         </select>
         <div *ngIf="authForm.get('role')?.invalid && authForm.get('role')?.touched">

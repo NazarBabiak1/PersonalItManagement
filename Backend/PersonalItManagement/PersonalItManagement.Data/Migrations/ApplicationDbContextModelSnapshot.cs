@@ -63,8 +63,8 @@ namespace PersonalItManagement.Data.Migrations
                         new
                         {
                             Id = "3",
-                            Name = "User",
-                            NormalizedName = "USER"
+                            Name = "Mounter",
+                            NormalizedName = "MOUNTER"
                         });
                 });
 

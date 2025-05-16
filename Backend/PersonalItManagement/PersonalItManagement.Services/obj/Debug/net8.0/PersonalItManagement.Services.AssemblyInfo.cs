@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PersonalItManagement.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+471cbb5688a6ee54cf049ab10b62452271560cbc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acda78a13bcc07578eb9ac3752fc099cce84c725")]
 [assembly: System.Reflection.AssemblyProductAttribute("PersonalItManagement.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PersonalItManagement.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

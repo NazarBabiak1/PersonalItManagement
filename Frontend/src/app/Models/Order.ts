@@ -7,6 +7,8 @@ export interface Order {
   discount: number;
   paidAmount: number;
   remainingAmount: number;
+  orderStatusId: number;
+  boardId: number;
   employeesName: string;
   equipmentsName: string;
   materialsName: string;

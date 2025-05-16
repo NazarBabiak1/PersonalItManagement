@@ -12,7 +12,7 @@ using PersonalITManagement.Data.Context;
 namespace PersonalItManagement.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250516195045_AddedRole")]
+    [Migration("20250516195819_AddedRole")]
     partial class AddedRole
     {
         /// <inheritdoc />
@@ -66,8 +66,8 @@ namespace PersonalItManagement.Data.Migrations
                         new
                         {
                             Id = "3",
-                            Name = "User",
-                            NormalizedName = "USER"
+                            Name = "Mounter",
+                            NormalizedName = "MOUNTER"
                         });
                 });
 
