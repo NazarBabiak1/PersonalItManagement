@@ -315,7 +315,7 @@ namespace PersonalItManagement.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TaskComments");
+                    b.ToTable("OrderComments");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>

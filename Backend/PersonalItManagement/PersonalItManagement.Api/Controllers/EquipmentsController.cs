@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PersonalITManagement.Data.Context;
 using PersonalItManagement.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PersonalItManagement.Api.Controllers
 {
@@ -17,31 +19,41 @@ namespace PersonalItManagement.Api.Controllers
 
         // GET: api/equipments
         [HttpGet]
-        public IActionResult GetEquipments()
+        public ActionResult<IEnumerable<EquipmentDTO>> GetEquipments()
         {
             var equipments = _context.Equipments
-                .Select(e => new
+                .Select(e => new EquipmentDTO
                 {
-                    e.Id,
-                    e.Name,
-                    e.Count,
-                    e.Price
-                }).ToList();
+                    Id = e.Id,
+                    Name = e.Name,
+                    Count = e.Count,
+                    Price = e.Price
+                })
+                .ToList();
 
             return Ok(equipments);
         }
 
         // POST: api/equipments
         [HttpPost]
-        public IActionResult CreateEquipment([FromBody] Equipment equipment)
+        public ActionResult<EquipmentDTO> CreateEquipment([FromBody] EquipmentDTO equipmentDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            var equipment = new Equipment
+            {
+                Name = equipmentDto.Name,
+                Count = equipmentDto.Count,
+                Price = equipmentDto.Price
+            };
+
             _context.Equipments.Add(equipment);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetEquipments), new { id = equipment.Id }, equipment);
+            equipmentDto.Id = equipment.Id; // Заповнюємо Id після збереження
+
+            return CreatedAtAction(nameof(GetEquipments), new { id = equipment.Id }, equipmentDto);
         }
 
         // DELETE: api/equipments/{id}

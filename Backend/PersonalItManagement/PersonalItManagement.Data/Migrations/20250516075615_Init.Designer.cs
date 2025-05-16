@@ -12,8 +12,8 @@ using PersonalITManagement.Data.Context;
 namespace PersonalItManagement.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250516071715_Onit")]
-    partial class Onit
+    [Migration("20250516075615_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -318,7 +318,7 @@ namespace PersonalItManagement.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TaskComments");
+                    b.ToTable("OrderComments");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>

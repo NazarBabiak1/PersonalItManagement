@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PersonalITManagement.Data.Context;
 using PersonalItManagement.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PersonalItManagement.Api.Controllers
 {
@@ -17,30 +20,40 @@ namespace PersonalItManagement.Api.Controllers
 
         // GET: api/employees
         [HttpGet]
-        public IActionResult GetEmployees()
+        public ActionResult<IEnumerable<EmployeeDTO>> GetEmployees()
         {
             var employees = _context.Employees
-                .Select(e => new
+                .Include(e => e.User)
+                .Select(e => new EmployeeDTO
                 {
-                    e.Id,
-                    e.User.UserName,
-                    e.Percentage
-                }).ToList();
+                    Id = e.Id,
+                    UserId = e.UserId,
+                    Percentage = e.Percentage
+                })
+                .ToList();
 
             return Ok(employees);
         }
 
         // POST: api/employees
         [HttpPost]
-        public IActionResult CreateEmployee([FromBody] Employee employee)
+        public ActionResult<EmployeeDTO> CreateEmployee([FromBody] EmployeeDTO employeeDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            var employee = new Employee
+            {
+                UserId = employeeDto.UserId,
+                Percentage = employeeDto.Percentage
+            };
+
             _context.Employees.Add(employee);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetEmployees), new { id = employee.Id }, employee);
+            employeeDto.Id = employee.Id; // оновлюємо Id після збереження
+
+            return CreatedAtAction(nameof(GetEmployees), new { id = employee.Id }, employeeDto);
         }
 
         // DELETE: api/employees/{id}

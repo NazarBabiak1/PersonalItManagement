@@ -20,7 +20,7 @@ namespace PersonalITManagement.Data.Context
         public DbSet<Order> Orders { get; set; }
         public DbSet<Work> Works { get; set; }
         public DbSet<KanbanBoard> KanbanBoards { get; set; }
-        public DbSet<OrderComment> TaskComments { get; set; }
+        public DbSet<OrderComment> OrderComments { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<ProfitDistribution> ProfitDistributions { get; set; }
 

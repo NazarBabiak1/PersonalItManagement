@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace PersonalItManagement.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Onit : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -300,6 +300,34 @@ namespace PersonalItManagement.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "OrderComments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    OrderId = table.Column<int>(type: "integer", nullable: false),
+                    UserId = table.Column<string>(type: "text", nullable: false),
+                    CommentText = table.Column<string>(type: "text", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderComments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderComments_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderComments_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProfitDistributions",
                 columns: table => new
                 {
@@ -314,34 +342,6 @@ namespace PersonalItManagement.Data.Migrations
                     table.PrimaryKey("PK_ProfitDistributions", x => x.Id);
                     table.ForeignKey(
                         name: "FK_ProfitDistributions_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TaskComments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    OrderId = table.Column<int>(type: "integer", nullable: false),
-                    UserId = table.Column<string>(type: "text", nullable: false),
-                    CommentText = table.Column<string>(type: "text", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TaskComments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TaskComments_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_TaskComments_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
@@ -441,6 +441,16 @@ namespace PersonalItManagement.Data.Migrations
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_OrderComments_OrderId",
+                table: "OrderComments",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderComments_UserId",
+                table: "OrderComments",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Orders_BoardId",
                 table: "Orders",
                 column: "BoardId");
@@ -454,16 +464,6 @@ namespace PersonalItManagement.Data.Migrations
                 name: "IX_ProfitDistributions_OrderId",
                 table: "ProfitDistributions",
                 column: "OrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TaskComments_OrderId",
-                table: "TaskComments",
-                column: "OrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TaskComments_UserId",
-                table: "TaskComments",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Works_OrderId",
@@ -499,10 +499,10 @@ namespace PersonalItManagement.Data.Migrations
                 name: "Materials");
 
             migrationBuilder.DropTable(
-                name: "ProfitDistributions");
+                name: "OrderComments");
 
             migrationBuilder.DropTable(
-                name: "TaskComments");
+                name: "ProfitDistributions");
 
             migrationBuilder.DropTable(
                 name: "Works");

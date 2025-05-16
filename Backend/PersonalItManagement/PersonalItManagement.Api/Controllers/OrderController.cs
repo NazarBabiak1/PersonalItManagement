@@ -31,7 +31,7 @@ public class OrdersController : ControllerBase
         Materials = o.Materials.Select(m => new { m.Id, m.Name, m.Count, m.Price }),
         Works = o.Works.Select(w => new { w.Id, w.Name, w.Cost })
     })
-    .AsEnumerable() 
+    .AsEnumerable()  // перевести у пам'ять (LINQ to Objects)
     .Select(o => new
     {
         o.Id,
