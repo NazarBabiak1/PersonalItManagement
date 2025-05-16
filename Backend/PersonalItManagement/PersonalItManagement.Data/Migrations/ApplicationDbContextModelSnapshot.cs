@@ -232,6 +232,32 @@ namespace PersonalItManagement.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PersonalItManagement.Data.Models.KanbanBoard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.ToTable("KanbanBoards");
+                });
+
             modelBuilder.Entity("PersonalItManagement.Data.Models.Material", b =>
                 {
                     b.Property<int>("Id")
@@ -259,6 +285,37 @@ namespace PersonalItManagement.Data.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("Materials");
+                });
+
+            modelBuilder.Entity("PersonalItManagement.Data.Models.OrderComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CommentText")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TaskComments");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>
@@ -381,9 +438,18 @@ namespace PersonalItManagement.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("BoardId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<decimal>("Discount")
                         .HasPrecision(18, 2)
                         .HasColumnType("numeric(18,2)");
+
+                    b.Property<DateTime?>("DueDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -396,15 +462,16 @@ namespace PersonalItManagement.Data.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("numeric(18,2)");
 
-                    b.Property<decimal>("RemainingAmount")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("numeric(18,2)");
+                    b.Property<int>("Priority")
+                        .HasColumnType("integer");
 
                     b.Property<decimal>("TotalPrice")
                         .HasPrecision(18, 2)
                         .HasColumnType("numeric(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BoardId");
 
                     b.HasIndex("OrderStatusId");
 
@@ -422,6 +489,9 @@ namespace PersonalItManagement.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -479,12 +549,42 @@ namespace PersonalItManagement.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PersonalItManagement.Data.Models.KanbanBoard", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CreatedByUser");
+                });
+
             modelBuilder.Entity("PersonalItManagement.Data.Models.Material", b =>
                 {
                     b.HasOne("PersonalItManagement.Models.Order", null)
                         .WithMany("Materials")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("PersonalItManagement.Data.Models.OrderComment", b =>
+                {
+                    b.HasOne("PersonalItManagement.Models.Order", "Order")
+                        .WithMany("OrderComments")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>
@@ -532,13 +632,26 @@ namespace PersonalItManagement.Data.Migrations
 
             modelBuilder.Entity("PersonalItManagement.Models.Order", b =>
                 {
+                    b.HasOne("PersonalItManagement.Data.Models.KanbanBoard", "KanbanBoard")
+                        .WithMany("Orders")
+                        .HasForeignKey("BoardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("PersonalItManagement.Models.OrderStatus", "Status")
                         .WithMany()
                         .HasForeignKey("OrderStatusId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.Navigation("KanbanBoard");
+
                     b.Navigation("Status");
+                });
+
+            modelBuilder.Entity("PersonalItManagement.Data.Models.KanbanBoard", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Models.Order", b =>
@@ -548,6 +661,8 @@ namespace PersonalItManagement.Data.Migrations
                     b.Navigation("Equipments");
 
                     b.Navigation("Materials");
+
+                    b.Navigation("OrderComments");
 
                     b.Navigation("Works");
                 });

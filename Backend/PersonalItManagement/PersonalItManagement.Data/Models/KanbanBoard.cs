@@ -1,0 +1,21 @@
+﻿using Microsoft.AspNetCore.Identity;
+using PersonalItManagement.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PersonalItManagement.Data.Models
+{
+    public class KanbanBoard
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string CreatedByUserId { get; set; }
+        public IdentityUser CreatedByUser { get; set; }
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+
+    }
+}

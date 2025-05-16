@@ -1,3 +1,11 @@
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.csproj.AssemblyReference.cache
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.AssemblyInfoInputs.cache
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.AssemblyInfo.cs
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.csproj.CoreCompileInputs.cache
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.sourcelink.json
+C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\appsettings.json
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Api.staticwebassets.endpoints.json
@@ -129,14 +137,6 @@ C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\Pe
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Services.dll
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Data.pdb
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\bin\Debug\net8.0\PersonalItManagement.Services.pdb
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.csproj.AssemblyReference.cache
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.AssemblyInfoInputs.cache
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.AssemblyInfo.cs
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.csproj.CoreCompileInputs.cache
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\PersonalItManagement.Api.sourcelink.json
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\scopedcss\bundle\PersonalItManagement.Api.styles.css
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\dimab\source\repos\PersonalItManagement\Backend\PersonalItManagement\PersonalItManagement.Api\obj\Debug\net8.0\staticwebassets.development.json

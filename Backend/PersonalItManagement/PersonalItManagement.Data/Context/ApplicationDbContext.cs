@@ -19,6 +19,8 @@ namespace PersonalITManagement.Data.Context
         public DbSet<Material> Materials { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Work> Works { get; set; }
+        public DbSet<KanbanBoard> KanbanBoards { get; set; }
+        public DbSet<OrderComment> TaskComments { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<ProfitDistribution> ProfitDistributions { get; set; }
 
@@ -67,9 +69,21 @@ namespace PersonalITManagement.Data.Context
                 .WithMany()
                 .HasForeignKey(p => p.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.KanbanBoard)
+                .WithMany(b => b.Orders)
+                .HasForeignKey(o => o.BoardId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<OrderComment>()
+                .HasOne(oc => oc.Order)
+                .WithMany(o => o.OrderComments)  
+                .HasForeignKey(oc => oc.OrderId);
+
             modelBuilder.Entity<Material>()
-    .Property(m => m.Price)
-    .HasPrecision(18, 2);  // Точність 18, масштаб 2
+                .Property(m => m.Price)
+                .HasPrecision(18, 2);  // Точність 18, масштаб 2
 
             modelBuilder.Entity<ProfitDistribution>()
                 .Property(p => p.Amount)
@@ -89,10 +103,6 @@ namespace PersonalITManagement.Data.Context
 
             modelBuilder.Entity<Order>()
                 .Property(o => o.PaidAmount)
-                .HasPrecision(18, 2);
-
-            modelBuilder.Entity<Order>()
-                .Property(o => o.RemainingAmount)
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<Order>()
