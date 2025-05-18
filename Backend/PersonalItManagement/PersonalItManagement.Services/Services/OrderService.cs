@@ -25,7 +25,6 @@ public class OrderService : IOrderService
             .Include(o => o.Employees)
             .Include(o => o.Equipments)
             .Include(o => o.Materials)
-            .Include(o => o.Works)
             .ToListAsync();
     }
 
@@ -35,7 +34,6 @@ public class OrderService : IOrderService
             .Include(o => o.Employees)
             .Include(o => o.Equipments)
             .Include(o => o.Materials)
-            .Include(o => o.Works)
             .FirstOrDefaultAsync(o => o.Id == id);
     }
 

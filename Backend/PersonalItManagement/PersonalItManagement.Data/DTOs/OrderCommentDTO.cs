@@ -10,4 +10,5 @@ public class CreateOrderCommentDTO
 {
     public int OrderId { get; set; }
     public string CommentText { get; set; } = null!;
+    public string UserId { get; set; }
 }

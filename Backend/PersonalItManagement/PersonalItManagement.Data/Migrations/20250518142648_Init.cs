@@ -229,14 +229,43 @@ namespace PersonalItManagement.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CompletedTransactions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserId = table.Column<string>(type: "text", nullable: false),
+                    OrderId = table.Column<int>(type: "integer", nullable: false),
+                    Amount = table.Column<decimal>(type: "numeric", nullable: false),
+                    Photo = table.Column<byte[]>(type: "bytea", nullable: false),
+                    CompletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CompletedTransactions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CompletedTransactions_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CompletedTransactions_Orders_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Orders",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Employees",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<string>(type: "text", nullable: false),
-                    Percentage = table.Column<int>(type: "integer", nullable: false),
-                    OrderId = table.Column<int>(type: "integer", nullable: true)
+                    OrderId = table.Column<int>(type: "integer", nullable: false),
+                    Percentage = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -328,41 +357,28 @@ namespace PersonalItManagement.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProfitDistributions",
+                name: "PendingTransactions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserId = table.Column<string>(type: "text", nullable: false),
                     OrderId = table.Column<int>(type: "integer", nullable: false),
-                    Role = table.Column<string>(type: "text", nullable: false),
-                    Amount = table.Column<decimal>(type: "numeric(18,2)", precision: 18, scale: 2, nullable: false)
+                    Amount = table.Column<decimal>(type: "numeric", nullable: false),
+                    Photo = table.Column<byte[]>(type: "bytea", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProfitDistributions", x => x.Id);
+                    table.PrimaryKey("PK_PendingTransactions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProfitDistributions_Orders_OrderId",
-                        column: x => x.OrderId,
-                        principalTable: "Orders",
+                        name: "FK_PendingTransactions_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Works",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Cost = table.Column<decimal>(type: "numeric(18,2)", precision: 18, scale: 2, nullable: false),
-                    OrderId = table.Column<int>(type: "integer", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Works", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Works_Orders_OrderId",
+                        name: "FK_PendingTransactions_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "Id",
@@ -375,7 +391,8 @@ namespace PersonalItManagement.Data.Migrations
                 values: new object[,]
                 {
                     { "1", null, "Admin", "ADMIN" },
-                    { "2", null, "User", "USER" }
+                    { "2", null, "Manager", "MANAGER" },
+                    { "3", null, "Mounter", "MOUNTER" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -414,6 +431,16 @@ namespace PersonalItManagement.Data.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CompletedTransactions_OrderId",
+                table: "CompletedTransactions",
+                column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CompletedTransactions_UserId",
+                table: "CompletedTransactions",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_OrderId",
@@ -461,14 +488,14 @@ namespace PersonalItManagement.Data.Migrations
                 column: "OrderStatusId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProfitDistributions_OrderId",
-                table: "ProfitDistributions",
+                name: "IX_PendingTransactions_OrderId",
+                table: "PendingTransactions",
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Works_OrderId",
-                table: "Works",
-                column: "OrderId");
+                name: "IX_PendingTransactions_UserId",
+                table: "PendingTransactions",
+                column: "UserId");
         }
 
         /// <inheritdoc />
@@ -490,6 +517,9 @@ namespace PersonalItManagement.Data.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "CompletedTransactions");
+
+            migrationBuilder.DropTable(
                 name: "Employees");
 
             migrationBuilder.DropTable(
@@ -502,10 +532,7 @@ namespace PersonalItManagement.Data.Migrations
                 name: "OrderComments");
 
             migrationBuilder.DropTable(
-                name: "ProfitDistributions");
-
-            migrationBuilder.DropTable(
-                name: "Works");
+                name: "PendingTransactions");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

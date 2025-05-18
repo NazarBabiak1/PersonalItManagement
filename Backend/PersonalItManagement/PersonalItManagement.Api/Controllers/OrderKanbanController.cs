@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using PersonalItManagement.Data;
 using PersonalItManagement.Models;
 using PersonalITManagement.Data.Context;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace PersonalItManagement.Controllers
 {
@@ -19,22 +22,24 @@ namespace PersonalItManagement.Controllers
 
         // GET: api/Orders
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
+        public async Task<ActionResult<IEnumerable<OrderDTO>>> GetOrders()
         {
-            return await _context.Orders
+            var orders = await _context.Orders
                 .Include(o => o.Status)
                 .Include(o => o.KanbanBoard)
                 .Include(o => o.OrderComments)
                 .Include(o => o.Employees)
                 .Include(o => o.Equipments)
                 .Include(o => o.Materials)
-                .Include(o => o.Works)
                 .ToListAsync();
+
+            var orderDTOs = orders.Select(o => MapToOrderDTO(o)).ToList();
+            return Ok(orderDTOs);
         }
 
         // GET: api/Orders/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrder(int id)
+        public async Task<ActionResult<OrderDTO>> GetOrder(int id)
         {
             var order = await _context.Orders
                 .Include(o => o.Status)
@@ -43,34 +48,74 @@ namespace PersonalItManagement.Controllers
                 .Include(o => o.Employees)
                 .Include(o => o.Equipments)
                 .Include(o => o.Materials)
-                .Include(o => o.Works)
                 .FirstOrDefaultAsync(o => o.Id == id);
 
             if (order == null)
                 return NotFound();
 
-            return order;
+            return Ok(MapToOrderDTO(order));
         }
 
         // POST: api/Orders
         [HttpPost]
-        public async Task<ActionResult<Order>> CreateOrder(Order order)
+        public async Task<ActionResult<OrderDTO>> CreateOrder([FromBody] CreateOrderDTO createOrderDTO)
         {
-            order.CreatedAt = DateTime.UtcNow;
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var order = new Order
+            {
+                Name = createOrderDTO.Name,
+                Address = createOrderDTO.Address,
+                TotalPrice = createOrderDTO.TotalPrice,
+                Discount = createOrderDTO.Discount,
+                PaidAmount = createOrderDTO.PaidAmount,
+                CreatedAt = DateTime.UtcNow,
+                BoardId = createOrderDTO.Id // Припускаємо, що Id у DTO відповідає BoardId
+            };
+
+            // Додаємо зв’язки
+            order.Employees = await _context.Employees.Where(e => createOrderDTO.EmployeeId.Contains(e.Id)).ToListAsync();
+            order.Equipments = await _context.Equipments.Where(e => createOrderDTO.Equipments.Contains(e.Id)).ToListAsync();
+            order.Materials = await _context.Materials.Where(m => createOrderDTO.Materials.Contains(m.Id)).ToListAsync();
+
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
+            var orderDTO = MapToOrderDTO(order);
+            return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, orderDTO);
         }
 
         // PUT: api/Orders/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateOrder(int id, Order order)
+        public async Task<IActionResult> UpdateOrder(int id, [FromBody] OrderDTO orderDTO)
         {
-            if (id != order.Id)
-                return BadRequest();
+            if (id != orderDTO.Id)
+                return BadRequest("Order ID mismatch");
 
-            _context.Entry(order).State = EntityState.Modified;
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var existingOrder = await _context.Orders
+                .Include(o => o.Employees)
+                .Include(o => o.Equipments)
+                .Include(o => o.Materials)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (existingOrder == null)
+                return NotFound();
+
+            // Оновлюємо основні поля
+            existingOrder.Name = orderDTO.Name;
+            existingOrder.Address = orderDTO.Address;
+            existingOrder.TotalPrice = orderDTO.TotalPrice;
+            existingOrder.Discount = orderDTO.Discount;
+            existingOrder.PaidAmount = orderDTO.PaidAmount;
+
+            // Оновлюємо зв’язки
+            existingOrder.Employees = await _context.Employees.Where(e => orderDTO.EmployeeId.Contains(e.Id)).ToListAsync();
+            existingOrder.Equipments = await _context.Equipments.Where(e => orderDTO.Equipments.Contains(e.Id)).ToListAsync();
+            existingOrder.Materials = await _context.Materials.Where(m => orderDTO.Materials.Contains(m.Id)).ToListAsync();
 
             try
             {
@@ -101,19 +146,38 @@ namespace PersonalItManagement.Controllers
             return NoContent();
         }
 
-        // GET: api/Orders/board/3 — отримати всі ордери на конкретній дошці
+        // GET: api/Orders/board/3
         [HttpGet("board/{boardId}")]
-        public async Task<ActionResult<IEnumerable<Order>>> GetOrdersByBoard(int boardId)
+        public async Task<ActionResult<IEnumerable<OrderDTO>>> GetOrdersByBoard(int boardId)
         {
-            return await _context.Orders
+            var orders = await _context.Orders
                 .Where(o => o.BoardId == boardId)
                 .Include(o => o.Status)
                 .Include(o => o.OrderComments)
                 .Include(o => o.Employees)
                 .Include(o => o.Equipments)
                 .Include(o => o.Materials)
-                .Include(o => o.Works)
                 .ToListAsync();
+
+            var orderDTOs = orders.Select(o => MapToOrderDTO(o)).ToList();
+            return Ok(orderDTOs);
+        }
+
+        // Метод для мапінгу Order на OrderDTO
+        private OrderDTO MapToOrderDTO(Order order)
+        {
+            return new OrderDTO
+            {
+                Id = order.Id,
+                Name = order.Name,
+                Address = order.Address,
+                TotalPrice = order.TotalPrice,
+                Discount = order.Discount,
+                PaidAmount = order.PaidAmount,
+                EmployeeId = order.Employees?.Select(e => e.Id).ToList() ?? new List<int>(),
+                Equipments = order.Equipments?.Select(e => e.Id).ToList() ?? new List<int>(),
+                Materials = order.Materials?.Select(m => m.Id).ToList() ?? new List<int>(),
+            };
         }
     }
 }

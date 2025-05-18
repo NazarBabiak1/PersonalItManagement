@@ -41,6 +41,5 @@ namespace PersonalItManagement.Models
         // Ресурси
         public ICollection<Equipment> Equipments { get; set; }
         public ICollection<Material> Materials { get; set; }
-        public ICollection<Work> Works { get; set; }
     }
 }

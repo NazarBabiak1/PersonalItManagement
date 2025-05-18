@@ -12,7 +12,7 @@ using PersonalITManagement.Data.Context;
 namespace PersonalItManagement.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250516075615_Init")]
+    [Migration("20250518142648_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -60,8 +60,14 @@ namespace PersonalItManagement.Data.Migrations
                         new
                         {
                             Id = "2",
-                            Name = "User",
-                            NormalizedName = "USER"
+                            Name = "Manager",
+                            NormalizedName = "MANAGER"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            Name = "Mounter",
+                            NormalizedName = "MOUNTER"
                         });
                 });
 
@@ -235,6 +241,40 @@ namespace PersonalItManagement.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PersonalItManagement.Data.Models.CompletedTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<byte[]>("Photo")
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CompletedTransactions");
+                });
+
             modelBuilder.Entity("PersonalItManagement.Data.Models.KanbanBoard", b =>
                 {
                     b.Property<int>("Id")
@@ -321,7 +361,7 @@ namespace PersonalItManagement.Data.Migrations
                     b.ToTable("OrderComments");
                 });
 
-            modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>
+            modelBuilder.Entity("PersonalItManagement.Data.Models.PendingTransaction", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -330,13 +370,19 @@ namespace PersonalItManagement.Data.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<decimal>("Amount")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("numeric(18,2)");
+                        .HasColumnType("numeric");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Role")
+                    b.Property<byte[]>("Photo")
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -344,33 +390,9 @@ namespace PersonalItManagement.Data.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("ProfitDistributions");
-                });
+                    b.HasIndex("UserId");
 
-            modelBuilder.Entity("PersonalItManagement.Data.Models.Work", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("Cost")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("numeric(18,2)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("Works");
+                    b.ToTable("PendingTransactions");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Models.Employee", b =>
@@ -381,7 +403,7 @@ namespace PersonalItManagement.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("OrderId")
+                    b.Property<int>("OrderId")
                         .HasColumnType("integer");
 
                     b.Property<int>("Percentage")
@@ -552,6 +574,25 @@ namespace PersonalItManagement.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PersonalItManagement.Data.Models.CompletedTransaction", b =>
+                {
+                    b.HasOne("PersonalItManagement.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("PersonalItManagement.Data.Models.KanbanBoard", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "CreatedByUser")
@@ -590,7 +631,7 @@ namespace PersonalItManagement.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PersonalItManagement.Data.Models.ProfitDistribution", b =>
+            modelBuilder.Entity("PersonalItManagement.Data.Models.PendingTransaction", b =>
                 {
                     b.HasOne("PersonalItManagement.Models.Order", "Order")
                         .WithMany()
@@ -598,29 +639,32 @@ namespace PersonalItManagement.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Order");
-                });
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("PersonalItManagement.Data.Models.Work", b =>
-                {
-                    b.HasOne("PersonalItManagement.Models.Order", null)
-                        .WithMany("Works")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.Navigation("Order");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Models.Employee", b =>
                 {
-                    b.HasOne("PersonalItManagement.Models.Order", null)
+                    b.HasOne("PersonalItManagement.Models.Order", "Order")
                         .WithMany("Employees")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Order");
 
                     b.Navigation("User");
                 });
@@ -666,8 +710,6 @@ namespace PersonalItManagement.Data.Migrations
                     b.Navigation("Materials");
 
                     b.Navigation("OrderComments");
-
-                    b.Navigation("Works");
                 });
 #pragma warning restore 612, 618
         }

@@ -18,11 +18,11 @@ namespace PersonalITManagement.Data.Context
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Work> Works { get; set; }
         public DbSet<KanbanBoard> KanbanBoards { get; set; }
         public DbSet<OrderComment> OrderComments { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
-        public DbSet<ProfitDistribution> ProfitDistributions { get; set; }
+        public DbSet<PendingTransaction> PendingTransactions { get; set; }
+        public DbSet<CompletedTransaction> CompletedTransactions { get; set; }
 
         // Налаштування моделі
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -36,6 +36,12 @@ namespace PersonalITManagement.Data.Context
                 .HasForeignKey(e => e.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Employee>()
+                .HasOne(e => e.Order)
+                .WithMany(o => o.Employees)
+                .HasForeignKey(e => e.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             // Order
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.Status)
@@ -43,10 +49,6 @@ namespace PersonalITManagement.Data.Context
                 .HasForeignKey(o => o.OrderStatusId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<Order>()
-                .HasMany(o => o.Employees)
-                .WithOne()
-                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.Equipments)
@@ -56,18 +58,6 @@ namespace PersonalITManagement.Data.Context
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.Materials)
                 .WithOne()
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Order>()
-                .HasMany(o => o.Works)
-                .WithOne()
-                .OnDelete(DeleteBehavior.Cascade);
-
-            // ProfitDistribution
-            modelBuilder.Entity<ProfitDistribution>()
-                .HasOne(p => p.Order)
-                .WithMany()
-                .HasForeignKey(p => p.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Order>()
@@ -83,15 +73,7 @@ namespace PersonalITManagement.Data.Context
 
             modelBuilder.Entity<Material>()
                 .Property(m => m.Price)
-                .HasPrecision(18, 2);  // Точність 18, масштаб 2
-
-            modelBuilder.Entity<ProfitDistribution>()
-                .Property(p => p.Amount)
-                .HasPrecision(18, 2);
-
-            modelBuilder.Entity<Work>()
-                .Property(w => w.Cost)
-                .HasPrecision(18, 2);
+                .HasPrecision(18, 2); 
 
             modelBuilder.Entity<Equipment>()
                 .Property(e => e.Price)
@@ -108,6 +90,31 @@ namespace PersonalITManagement.Data.Context
             modelBuilder.Entity<Order>()
                 .Property(o => o.TotalPrice)
                 .HasPrecision(18, 2);
+
+            modelBuilder.Entity<PendingTransaction>()
+                .HasOne(p => p.User)
+                .WithMany()
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PendingTransaction>()
+                .HasOne(p => p.Order)
+                .WithMany()
+                .HasForeignKey(p => p.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CompletedTransaction>()
+                .HasOne(p => p.User)
+                .WithMany()
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CompletedTransaction>()
+                .HasOne(p => p.Order)
+                .WithMany()
+                .HasForeignKey(p => p.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
 
             modelBuilder.Entity<IdentityRole>().HasData(
                new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
