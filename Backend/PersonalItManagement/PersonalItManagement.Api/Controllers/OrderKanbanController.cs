@@ -74,11 +74,6 @@ namespace PersonalItManagement.Controllers
                 BoardId = createOrderDTO.Id // Припускаємо, що Id у DTO відповідає BoardId
             };
 
-            // Додаємо зв’язки
-            order.Employees = await _context.Employees.Where(e => createOrderDTO.EmployeeId.Contains(e.Id)).ToListAsync();
-            order.Equipments = await _context.Equipments.Where(e => createOrderDTO.Equipments.Contains(e.Id)).ToListAsync();
-            order.Materials = await _context.Materials.Where(m => createOrderDTO.Materials.Contains(m.Id)).ToListAsync();
-
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
@@ -112,10 +107,6 @@ namespace PersonalItManagement.Controllers
             existingOrder.Discount = orderDTO.Discount;
             existingOrder.PaidAmount = orderDTO.PaidAmount;
 
-            // Оновлюємо зв’язки
-            existingOrder.Employees = await _context.Employees.Where(e => orderDTO.EmployeeId.Contains(e.Id)).ToListAsync();
-            existingOrder.Equipments = await _context.Equipments.Where(e => orderDTO.Equipments.Contains(e.Id)).ToListAsync();
-            existingOrder.Materials = await _context.Materials.Where(m => orderDTO.Materials.Contains(m.Id)).ToListAsync();
 
             try
             {
@@ -173,10 +164,8 @@ namespace PersonalItManagement.Controllers
                 Address = order.Address,
                 TotalPrice = order.TotalPrice,
                 Discount = order.Discount,
-                PaidAmount = order.PaidAmount,
-                EmployeeId = order.Employees?.Select(e => e.Id).ToList() ?? new List<int>(),
-                Equipments = order.Equipments?.Select(e => e.Id).ToList() ?? new List<int>(),
-                Materials = order.Materials?.Select(m => m.Id).ToList() ?? new List<int>(),
+                PaidAmount = order.PaidAmount
+
             };
         }
     }

@@ -8,10 +8,7 @@
     public decimal Discount { get; set; }
     public decimal PaidAmount { get; set; }
     public decimal RemainingAmount { get; set; }
-    public List<int> EmployeeId { get; set; }
-    public List<int> Equipments { get; set; }
-    public List<int> Materials { get; set; }
-    public List<int> Works { get; set; }
+
 }
 
 public class CreateOrderDTO
@@ -23,8 +20,5 @@ public class CreateOrderDTO
     public decimal TotalPrice { get; set; }
     public decimal Discount { get; set; }
     public decimal PaidAmount { get; set; }
-    public List<int> EmployeeId { get; set; }
-    public List<int> Equipments { get; set; }
-    public List<int> Materials { get; set; }
-    public List<int> Works { get; set; }
+
 }

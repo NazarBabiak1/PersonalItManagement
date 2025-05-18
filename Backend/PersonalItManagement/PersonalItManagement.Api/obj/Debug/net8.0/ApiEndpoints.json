@@ -42,6 +42,79 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PersonalItManagement.Controllers.CompletedTransactionController",
+    "Method": "Create",
+    "RelativePath": "api/CompletedTransaction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Controllers.CompletedTransactionController",
+    "Method": "GetAll",
+    "RelativePath": "api/CompletedTransaction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Controllers.CompletedTransactionController",
+    "Method": "Get",
+    "RelativePath": "api/CompletedTransaction/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Controllers.CompletedTransactionController",
+    "Method": "Delete",
+    "RelativePath": "api/CompletedTransaction/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PersonalItManagement.Api.Controllers.EmployeesController",
     "Method": "GetEmployees",
     "RelativePath": "api/Employees",
@@ -564,5 +637,78 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "PersonalItManagement.Controllers.PendingTransactionController",
+    "Method": "Create",
+    "RelativePath": "api/PendingTransaction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OrderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Amount",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Photo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Controllers.PendingTransactionController",
+    "Method": "GetAll",
+    "RelativePath": "api/PendingTransaction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Controllers.PendingTransactionController",
+    "Method": "Get",
+    "RelativePath": "api/PendingTransaction/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Controllers.PendingTransactionController",
+    "Method": "Delete",
+    "RelativePath": "api/PendingTransaction/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
