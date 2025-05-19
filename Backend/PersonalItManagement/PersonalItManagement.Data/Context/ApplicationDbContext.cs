@@ -24,6 +24,7 @@ namespace PersonalITManagement.Data.Context
         public DbSet<PendingTransaction> PendingTransactions { get; set; }
         public DbSet<CompletedTransaction> CompletedTransactions { get; set; }
 
+
         // Налаштування моделі
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -73,11 +74,21 @@ namespace PersonalITManagement.Data.Context
 
             modelBuilder.Entity<Material>()
                 .Property(m => m.Price)
-                .HasPrecision(18, 2); 
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Material>()
+                .HasOne(m => m.Order)
+                .WithMany(o => o.Materials)
+                .HasForeignKey(m => m.OrderId);
 
             modelBuilder.Entity<Equipment>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Equipment>()
+                .HasOne(e => e.Order)
+                .WithMany(o => o.Equipments)
+                .HasForeignKey(e => e.OrderId);
 
             modelBuilder.Entity<Order>()
                 .Property(o => o.Discount)
@@ -113,6 +124,12 @@ namespace PersonalITManagement.Data.Context
                 .HasOne(p => p.Order)
                 .WithMany()
                 .HasForeignKey(p => p.OrderId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<OrderStatus>()
+                .HasOne(s => s.KanbanBoard)
+                .WithMany(b => b.OrderStatuses)
+                .HasForeignKey(s => s.KanbanBoardId)
                 .OnDelete(DeleteBehavior.Cascade);
 
 

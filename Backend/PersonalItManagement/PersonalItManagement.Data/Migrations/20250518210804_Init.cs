@@ -54,20 +54,6 @@ namespace PersonalItManagement.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderStatuses",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Position = table.Column<int>(type: "integer", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderStatuses", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -195,6 +181,27 @@ namespace PersonalItManagement.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "OrderStatuses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Position = table.Column<int>(type: "integer", nullable: false),
+                    KanbanBoardId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderStatuses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderStatuses_KanbanBoards_KanbanBoardId",
+                        column: x => x.KanbanBoardId,
+                        principalTable: "KanbanBoards",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -293,7 +300,7 @@ namespace PersonalItManagement.Data.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Count = table.Column<int>(type: "integer", nullable: false),
                     Price = table.Column<decimal>(type: "numeric(18,2)", precision: 18, scale: 2, nullable: false),
-                    OrderId = table.Column<int>(type: "integer", nullable: true)
+                    OrderId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -315,7 +322,7 @@ namespace PersonalItManagement.Data.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Count = table.Column<int>(type: "integer", nullable: false),
                     Price = table.Column<decimal>(type: "numeric(18,2)", precision: 18, scale: 2, nullable: false),
-                    OrderId = table.Column<int>(type: "integer", nullable: true)
+                    OrderId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -488,6 +495,11 @@ namespace PersonalItManagement.Data.Migrations
                 column: "OrderStatusId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_OrderStatuses_KanbanBoardId",
+                table: "OrderStatuses",
+                column: "KanbanBoardId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_PendingTransactions_OrderId",
                 table: "PendingTransactions",
                 column: "OrderId");
@@ -541,10 +553,10 @@ namespace PersonalItManagement.Data.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "KanbanBoards");
+                name: "OrderStatuses");
 
             migrationBuilder.DropTable(
-                name: "OrderStatuses");
+                name: "KanbanBoards");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

@@ -12,7 +12,7 @@ using PersonalITManagement.Data.Context;
 namespace PersonalItManagement.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250518142648_Init")]
+    [Migration("20250518210804_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -316,7 +316,7 @@ namespace PersonalItManagement.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("OrderId")
+                    b.Property<int>("OrderId")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Price")
@@ -437,7 +437,7 @@ namespace PersonalItManagement.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("OrderId")
+                    b.Property<int>("OrderId")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Price")
@@ -511,6 +511,9 @@ namespace PersonalItManagement.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("KanbanBoardId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -519,6 +522,8 @@ namespace PersonalItManagement.Data.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("KanbanBoardId");
 
                     b.ToTable("OrderStatuses");
                 });
@@ -606,10 +611,13 @@ namespace PersonalItManagement.Data.Migrations
 
             modelBuilder.Entity("PersonalItManagement.Data.Models.Material", b =>
                 {
-                    b.HasOne("PersonalItManagement.Models.Order", null)
+                    b.HasOne("PersonalItManagement.Models.Order", "Order")
                         .WithMany("Materials")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Data.Models.OrderComment", b =>
@@ -671,10 +679,13 @@ namespace PersonalItManagement.Data.Migrations
 
             modelBuilder.Entity("PersonalItManagement.Models.Equipment", b =>
                 {
-                    b.HasOne("PersonalItManagement.Models.Order", null)
+                    b.HasOne("PersonalItManagement.Models.Order", "Order")
                         .WithMany("Equipments")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("PersonalItManagement.Models.Order", b =>
@@ -696,8 +707,21 @@ namespace PersonalItManagement.Data.Migrations
                     b.Navigation("Status");
                 });
 
+            modelBuilder.Entity("PersonalItManagement.Models.OrderStatus", b =>
+                {
+                    b.HasOne("PersonalItManagement.Data.Models.KanbanBoard", "KanbanBoard")
+                        .WithMany("OrderStatuses")
+                        .HasForeignKey("KanbanBoardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("KanbanBoard");
+                });
+
             modelBuilder.Entity("PersonalItManagement.Data.Models.KanbanBoard", b =>
                 {
+                    b.Navigation("OrderStatuses");
+
                     b.Navigation("Orders");
                 });
 

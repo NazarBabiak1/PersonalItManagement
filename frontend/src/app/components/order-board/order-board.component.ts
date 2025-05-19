@@ -1,75 +1,121 @@
 import {Component, OnInit} from '@angular/core';
-import {CdkDrag, CdkDragDrop, CdkDropList, transferArrayItem} from '@angular/cdk/drag-drop';
-import {NgClass, NgForOf} from '@angular/common';
-
-interface Order {
-  id: number;
-  name: string;
-  address: string;
-  orderStatusId: number;
-}
+import {CommonModule, NgClass, NgForOf} from '@angular/common';
+import {CdkDrag, CdkDragDrop, CdkDropList, DragDropModule, transferArrayItem,} from '@angular/cdk/drag-drop';
+import {OrderService} from '../../services/order.service';
+import {Order} from '../../Models/Order';
+import {OrderStatus} from '../../Models/OrderStatus';
+import {OrderDetailsDialogComponent} from '../../dialogs/order-details-dialog/order-details-dialog.component';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-order-board',
   templateUrl: './order-board.component.html',
-  standalone: true,
-  imports: [CdkDropList, NgForOf, CdkDrag, NgClass],
   styleUrls: ['./order-board.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NgForOf, NgClass, CdkDrag, CdkDropList, DragDropModule, MatDialogModule],
 })
 export class OrderBoardComponent implements OnInit {
   orders: Order[] = [];
-  groupedOrders: { [key: number]: Order[] } = {};
-  statuses = [
-    {id: 1, name: 'Очікує'},
-    {id: 2, name: 'У роботі'},
-    {id: 3, name: 'Завершено'},
-  ];
+  statuses: OrderStatus[] = [];
+  groupedOrders: { [statusId: number]: Order[] } = {};
   connectedDropLists: string[] = [];
+  clickedOrder: Order | null = null;
 
-  ngOnInit(): void {
-    this.orders = [
-      {id: 1, name: 'Замовлення 1', address: 'вул. Шевченка, 12', orderStatusId: 1},
-      {id: 2, name: 'Замовлення 2', address: 'вул. Франка, 25', orderStatusId: 1},
-      {id: 3, name: 'Замовлення 3', address: 'вул. Грушевського, 8', orderStatusId: 2},
-      {id: 4, name: 'Замовлення 4', address: 'вул. Кульпарківська, 33', orderStatusId: 3},
-    ];
+  private boardId = 1;
+  private dragStart: MouseEvent | null = null;
 
-    this.groupOrdersByStatus();
-    this.connectedDropLists = this.statuses.map((s) => `${s.id}`);
+  constructor(private orderService: OrderService, private dialog: MatDialog) {
   }
 
-  groupOrdersByStatus() {
-    this.groupedOrders = {};
-    this.statuses.forEach((status) => {
-      this.groupedOrders[status.id] = this.orders.filter((o) => o.orderStatusId === status.id);
+  ngOnInit(): void {
+    this.loadBoardData();
+  }
+
+  loadBoardData(): void {
+    this.orderService.getStatusesByBoard(this.boardId).subscribe({
+      next: (statuses) => {
+        this.statuses = statuses;
+        this.connectedDropLists = statuses.map(s => `status-${s.id}`);
+
+        this.orderService.getOrdersByBoard(this.boardId).subscribe({
+          next: (orders) => {
+            this.orders = orders.filter(order => statuses.some(s => s.id === order.orderStatusId));
+            this.groupOrdersByStatus();
+          },
+          error: (err) => console.error('Помилка завантаження замовлень:', err),
+        });
+      },
+      error: (err) => console.error('Помилка завантаження статусів:', err),
     });
   }
 
-  onDrop(event: CdkDragDrop<Order[]>, newStatusId: number) {
+  groupOrdersByStatus(): void {
+    this.groupedOrders = {};
+    this.statuses.forEach(status => {
+      this.groupedOrders[status.id] = this.orders.filter(order => order.orderStatusId === status.id);
+    });
+  }
+
+  onDrop(event: CdkDragDrop<Order[]>, newStatusId: number): void {
     const order = event.previousContainer.data[event.previousIndex];
+    if (order.orderStatusId === newStatusId) return;
 
-    if (order.orderStatusId !== newStatusId) {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
+    const previousContainerData = [...event.previousContainer.data];
+    const previousIndex = event.previousIndex;
 
-      order.orderStatusId = newStatusId;
-    }
+    transferArrayItem(
+      event.previousContainer.data,
+      event.container.data,
+      event.previousIndex,
+      event.currentIndex
+    );
+
+    const oldStatusId = order.orderStatusId;
+    order.orderStatusId = newStatusId;
+
+    this.orderService.updateOrderStatus(order.id, newStatusId).subscribe({
+      next: () => {
+        this.groupOrdersByStatus();
+      },
+      error: (err) => {
+        console.error('Помилка оновлення статусу:', err);
+        // Повертаємо назад
+        transferArrayItem(
+          event.container.data,
+          previousContainerData,
+          event.currentIndex,
+          previousIndex
+        );
+        event.previousContainer.data = previousContainerData;
+        order.orderStatusId = oldStatusId;
+      },
+    });
   }
 
-  statusIcon(statusId: number): string {
-    switch (statusId) {
-      case 1:
-        return '⏳';
-      case 2:
-        return '⚙️';
-      case 3:
-        return '✅';
-      default:
-        return '';
-    }
+  onOrderMouseDown(event: MouseEvent): void {
+    this.dragStart = event;
   }
+
+  onOrderClick(event: MouseEvent, order: Order): void {
+    if (!this.dragStart) return;
+
+    const dx = Math.abs(event.clientX - this.dragStart.clientX);
+    const dy = Math.abs(event.clientY - this.dragStart.clientY);
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance < 5) {
+      this.openOrderDetails(order);
+    }
+
+    this.dragStart = null;
+  }
+
+  openOrderDetails(order: Order): void {
+    this.clickedOrder = order;
+    this.dialog.open(OrderDetailsDialogComponent, {
+      width: '500px',
+      data: {order, statuses: this.statuses},
+    });
+  }
+  
 }

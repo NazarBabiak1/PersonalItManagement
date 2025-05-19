@@ -1,0 +1,27 @@
+<div class="dialog-container">
+  <mat-card class="order-details-card">
+    <mat-card-header>
+      <mat-card-title>Деталі замовлення #{{ data.order.id }}</mat-card-title>
+      <mat-card-subtitle>{{ data.order.name }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>ID:</strong> {{ data.order.id }}</p>
+      <p><strong>Назва:</strong> {{ data.order.name }}</p>
+      <p><strong>Адреса:</strong> {{ data.order.address }}</p>
+      <p><strong>Статус:</strong> {{ getStatusName(data.order.orderStatusId) }}</p>
+      <p><strong>Загальна ціна:</strong> {{ data.order.totalPrice | currency:'UAH' }}</p>
+      <p><strong>Знижка:</strong> {{ data.order.discount | currency:'UAH' }}</p>
+      <p><strong>Сплачена сума:</strong> {{ data.order.paidAmount | currency:'UAH' }}</p>
+      <p><strong>Залишок до оплати:</strong> {{ data.order.remainingAmount | currency:'UAH' }}</p>
+      <p><strong>ID дошки:</strong> {{ data.order.boardId }}</p>
+      <!--      <p><strong>Працівники:</strong> {{ data.order.employeesName }}</p>-->
+      <!--      <p><strong>Обладнання:</strong> {{ data.order.equipmentsName }}</p>-->
+      <!--      <p><strong>Матеріали:</strong> {{ data.order.materialsName }}</p>-->
+      <p *ngIf="data.order.expanded !== undefined"><strong>Розгорнуто:</strong> {{ data.order.expanded ? 'Так' : 'Ні' }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button (click)="close()" color="primary" mat-button>Закрити</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

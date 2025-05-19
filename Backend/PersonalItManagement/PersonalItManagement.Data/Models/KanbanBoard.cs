@@ -16,6 +16,7 @@ namespace PersonalItManagement.Data.Models
         public string CreatedByUserId { get; set; }
         public IdentityUser CreatedByUser { get; set; }
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<OrderStatus> OrderStatuses { get; set; } = new List<OrderStatus>();
 
     }
 }

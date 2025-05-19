@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PersonalItManagement.Data;
 using PersonalItManagement.Models;
 using PersonalITManagement.Data.Context;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace PersonalItManagement.Controllers
 {
@@ -33,7 +29,7 @@ namespace PersonalItManagement.Controllers
                 .Include(o => o.Materials)
                 .ToListAsync();
 
-            var orderDTOs = orders.Select(o => MapToOrderDTO(o)).ToList();
+            var orderDTOs = orders.Select(MapToOrderDTO).ToList();
             return Ok(orderDTOs);
         }
 
@@ -63,6 +59,9 @@ namespace PersonalItManagement.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            if (createOrderDTO.BoardId == 0)
+                return BadRequest("BoardId не може бути 0 або відсутній");
+
             var order = new Order
             {
                 Name = createOrderDTO.Name,
@@ -71,22 +70,49 @@ namespace PersonalItManagement.Controllers
                 Discount = createOrderDTO.Discount,
                 PaidAmount = createOrderDTO.PaidAmount,
                 CreatedAt = DateTime.UtcNow,
-                BoardId = createOrderDTO.Id // Припускаємо, що Id у DTO відповідає BoardId
+                BoardId = createOrderDTO.BoardId,
+                OrderStatusId = createOrderDTO.OrderStatusId
             };
 
             _context.Orders.Add(order);
+            Console.WriteLine("СТВОРЕННЯ ЗАМОВЛЕННЯ >>> BoardId: " + order.BoardId);
             await _context.SaveChangesAsync();
 
             var orderDTO = MapToOrderDTO(order);
             return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, orderDTO);
         }
 
+        // PUT: api/Orders/15/status/1
+        [HttpPut("{id}/status/{statusId}")]
+        public async Task<IActionResult> UpdateOrderStatus(int id, int statusId)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null)
+                return NotFound();
+
+            order.OrderStatusId = statusId;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Orders.Any(e => e.Id == id))
+                    return NotFound();
+                throw;
+            }
+
+            return NoContent();
+        }
+
+
         // PUT: api/Orders/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateOrder(int id, [FromBody] OrderDTO orderDTO)
         {
             if (id != orderDTO.Id)
-                return BadRequest("Order ID mismatch");
+                return BadRequest("ID не збігаються");
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -100,13 +126,12 @@ namespace PersonalItManagement.Controllers
             if (existingOrder == null)
                 return NotFound();
 
-            // Оновлюємо основні поля
             existingOrder.Name = orderDTO.Name;
             existingOrder.Address = orderDTO.Address;
             existingOrder.TotalPrice = orderDTO.TotalPrice;
             existingOrder.Discount = orderDTO.Discount;
             existingOrder.PaidAmount = orderDTO.PaidAmount;
-
+            existingOrder.BoardId = orderDTO.BoardId;
 
             try
             {
@@ -150,22 +175,24 @@ namespace PersonalItManagement.Controllers
                 .Include(o => o.Materials)
                 .ToListAsync();
 
-            var orderDTOs = orders.Select(o => MapToOrderDTO(o)).ToList();
+            var orderDTOs = orders.Select(MapToOrderDTO).ToList();
             return Ok(orderDTOs);
         }
 
-        // Метод для мапінгу Order на OrderDTO
-        private OrderDTO MapToOrderDTO(Order order)
+        // Мапінг Order -> OrderDTO
+        private static OrderDTO MapToOrderDTO(Order order)
         {
             return new OrderDTO
             {
                 Id = order.Id,
+                BoardId = order.BoardId,
+                OrderStatusId = order.OrderStatusId,
                 Name = order.Name,
                 Address = order.Address,
                 TotalPrice = order.TotalPrice,
                 Discount = order.Discount,
-                PaidAmount = order.PaidAmount
-
+                PaidAmount = order.PaidAmount,
+                RemainingAmount = order.TotalPrice - order.Discount - order.PaidAmount
             };
         }
     }

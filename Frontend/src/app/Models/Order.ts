@@ -12,5 +12,4 @@ export interface Order {
   employeesName: string;
   equipmentsName: string;
   materialsName: string;
-  worksName: string;
 }

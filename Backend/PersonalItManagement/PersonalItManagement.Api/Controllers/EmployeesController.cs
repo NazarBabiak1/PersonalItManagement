@@ -28,7 +28,8 @@ namespace PersonalItManagement.Api.Controllers
                 {
                     Id = e.Id,
                     UserId = e.UserId,
-                    Percentage = e.Percentage
+                    Percentage = e.Percentage,
+                    OrderId = e.OrderId
                 })
                 .ToList();
 
@@ -45,7 +46,8 @@ namespace PersonalItManagement.Api.Controllers
             var employee = new Employee
             {
                 UserId = employeeDto.UserId,
-                Percentage = employeeDto.Percentage
+                Percentage = employeeDto.Percentage,
+                OrderId = employeeDto.OrderId
             };
 
             _context.Employees.Add(employee);

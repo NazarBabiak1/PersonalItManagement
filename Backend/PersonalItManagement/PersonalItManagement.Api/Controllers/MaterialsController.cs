@@ -28,7 +28,8 @@ namespace PersonalItManagement.Api.Controllers
                     Id = m.Id,
                     Name = m.Name,
                     Count = m.Count,
-                    Price = m.Price
+                    Price = m.Price,
+                    OrderId = m.OrderId
                 })
                 .ToList();
 
@@ -46,7 +47,8 @@ namespace PersonalItManagement.Api.Controllers
             {
                 Name = materialDto.Name,
                 Count = materialDto.Count,
-                Price = materialDto.Price
+                Price = materialDto.Price,
+                OrderId = materialDto.OrderId
             };
 
             _context.Materials.Add(material);

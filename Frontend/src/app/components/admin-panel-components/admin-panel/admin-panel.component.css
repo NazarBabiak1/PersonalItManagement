@@ -1,0 +1,10 @@
+/* empty-component.component.scss */
+:host {
+  display: block;
+  min-height: 100vh; /* Забезпечує, що компонент займає всю висоту екрана */
+  background: url('https://www.transparenttextures.com/patterns/cardboard.png'),
+  linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  background-blend-mode: overlay;
+  background-repeat: repeat;
+  background-size: auto; /* Зберігає природний розмір текстури */
+}

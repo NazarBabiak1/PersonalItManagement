@@ -8,29 +8,29 @@
           'bg-yellow-100 text-yellow-600': status.id === 1,
           'bg-blue-100 text-blue-600': status.id === 2,
           'bg-green-100 text-green-600': status.id === 3
-        }" class="status-icon">{{ statusIcon(status.id) }}</span>
+        }"></span>
         {{ status.name }}
       </h2>
 
       <div
+        #statusList="cdkDropList"
         (cdkDropListDropped)="onDrop($event, status.id)"
         [cdkDropListConnectedTo]="connectedDropLists"
         [cdkDropListData]="groupedOrders[status.id]"
+        [id]="'status-' + status.id"
         cdkDropList
         class="order-list min-h-[150px] flex flex-col gap-4"
       >
-        <div *ngFor="let order of groupedOrders[status.id]"
+        <div (mousedown)="onOrderMouseDown($event)"
+             (mouseup)="onOrderClick($event, order)"
+             *ngFor="let order of groupedOrders[status.id]"
              cdkDrag
              class="order-card bg-white border border-gray-200 shadow-md rounded-lg p-4 cursor-grab active:cursor-grabbing transition-all duration-300 hover:shadow-lg"
         >
           <div class="flex justify-between items-start">
             <p class="order-name font-semibold text-gray-900">{{ order.name }}</p>
-            <span class="text-xs text-gray-400">#{{ order.id }}</span>
           </div>
           <p class="order-address text-sm text-gray-600 mt-1">{{ order.address }}</p>
-          <div class="mt-2 flex gap-2">
-            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-600">📍 Локація</span>
-          </div>
         </div>
       </div>
     </div>
