@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Додати матеріал</h2>
+<form (ngSubmit)="submit()" [formGroup]="form" mat-dialog-content>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Назва</mat-label>
+    <input formControlName="name" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Кількість</mat-label>
+    <input formControlName="count" matInput type="number">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Ціна</mat-label>
+    <input formControlName="price" matInput type="number">
+  </mat-form-field>
+  <mat-dialog-actions align="end">
+    <button (click)="cancel()" mat-button type="button">Скасувати</button>
+    <button color="primary" mat-raised-button type="submit">Додати</button>
+  </mat-dialog-actions>
+</form>

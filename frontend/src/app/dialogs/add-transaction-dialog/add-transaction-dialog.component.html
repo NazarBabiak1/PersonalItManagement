@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Додати грошову операцію</h2>
+<form (ngSubmit)="submit()" [formGroup]="form" mat-dialog-content>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>User ID</mat-label>
+    <input formControlName="userId" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Сума</mat-label>
+    <input formControlName="amount" matInput type="number">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Фото (Base64)</mat-label>
+    <textarea formControlName="photoBase64" matInput rows="3"></textarea>
+  </mat-form-field>
+  <mat-dialog-actions align="end">
+    <button (click)="cancel()" mat-button type="button">Скасувати</button>
+    <button color="primary" mat-raised-button type="submit">Додати</button>
+  </mat-dialog-actions>
+</form>

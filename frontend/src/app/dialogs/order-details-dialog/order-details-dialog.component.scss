@@ -126,3 +126,14 @@ mat-card-actions button[color="primary"]:hover {
     font-size: 13px;
   }
 }
+
+.action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  background: #f1f2f4;
+  border-top: 1px solid #dfe1e6;
+}
+

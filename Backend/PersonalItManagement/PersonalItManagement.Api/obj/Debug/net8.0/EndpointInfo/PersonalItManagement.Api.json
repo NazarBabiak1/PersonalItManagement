@@ -1348,40 +1348,19 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "UserId": {
-                    "type": "string"
-                  },
-                  "OrderId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Amount": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "Photo": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              },
-              "encoding": {
-                "UserId": {
-                  "style": "form"
-                },
-                "OrderId": {
-                  "style": "form"
-                },
-                "Amount": {
-                  "style": "form"
-                },
-                "Photo": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/PendingTransactionDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PendingTransactionDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PendingTransactionDTO"
               }
             }
           }
@@ -1747,6 +1726,28 @@
           "boardId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PendingTransactionDTO": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "photoBase64": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -18,14 +18,20 @@ namespace PersonalItManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm] PendingTransactionDTO dto)
+        public async Task<IActionResult> Create([FromBody] PendingTransactionDTO dto)
         {
-            byte[] photoBytes = null!;
-            if (dto.Photo != null && dto.Photo.Length > 0)
+            byte[]? photoBytes = null;
+
+            if (!string.IsNullOrEmpty(dto.PhotoBase64))
             {
-                using var memoryStream = new MemoryStream();
-                await dto.Photo.CopyToAsync(memoryStream);
-                photoBytes = memoryStream.ToArray();
+                try
+                {
+                    photoBytes = Convert.FromBase64String(dto.PhotoBase64);
+                }
+                catch
+                {
+                    return BadRequest(new { message = "Invalid Base64 photo data." });
+                }
             }
 
             var transaction = new PendingTransaction
@@ -41,6 +47,7 @@ namespace PersonalItManagement.Controllers
 
             return Ok(new { message = "Pending transaction created successfully." });
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAll()

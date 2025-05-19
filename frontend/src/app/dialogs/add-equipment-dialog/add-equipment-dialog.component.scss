@@ -1,0 +1,33 @@
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 16px;
+}
+
+mat-dialog-actions {
+  margin-top: 16px;
+  padding: 8px 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+button[mat-button],
+button[mat-raised-button] {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+button[color="primary"] {
+  background: #0052cc;
+  color: #fff;
+}
+
+button[color="primary"]:hover {
+  background: #0747a6;
+}

@@ -15,4 +15,9 @@ export class EmployeeService {
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.apiUrl, {headers: {'accept': '*/*'}});
   }
+
+  addEmployee(employee: { userId: string; orderId: number; percentage: number }) {
+    return this.http.post(this.apiUrl, employee);
+  }
+
 }

@@ -15,4 +15,11 @@ export class EquipmentService {
   getEquipments(): Observable<Equipment[]> {
     return this.http.get<Equipment[]>(this.apiUrl, {headers: {'accept': '*/*'}});
   }
+
+
+  addEquipment(equipment: { name: string; count: number; price: number; orderId: number }) {
+    return this.http.post(this.apiUrl, equipment);
+  }
 }
+
+

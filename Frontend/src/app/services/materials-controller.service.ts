@@ -15,4 +15,8 @@ export class MaterialService {
   getMaterials(): Observable<Material[]> {
     return this.http.get<Material[]>(this.apiUrl, {headers: {'accept': '*/*'}});
   }
+
+  addMaterial(material: { name: string; count: number; price: number; orderId: number }) {
+    return this.http.post(this.apiUrl, material);
+  }
 }
