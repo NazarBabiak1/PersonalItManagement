@@ -9,7 +9,6 @@
     public decimal Discount { get; set; }
     public decimal PaidAmount { get; set; }
     public decimal RemainingAmount { get; set; }
-
 }
 
 public class CreateOrderDTO
@@ -22,5 +21,4 @@ public class CreateOrderDTO
     public decimal TotalPrice { get; set; }
     public decimal Discount { get; set; }
     public decimal PaidAmount { get; set; }
-
 }

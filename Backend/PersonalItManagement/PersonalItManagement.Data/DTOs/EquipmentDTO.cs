@@ -1,5 +1,4 @@
-﻿// EquipmentDTO.cs
-public class EquipmentDTO
+﻿public class EquipmentDTO
 {
     public int Id { get; set; }
     public string Name { get; set; }

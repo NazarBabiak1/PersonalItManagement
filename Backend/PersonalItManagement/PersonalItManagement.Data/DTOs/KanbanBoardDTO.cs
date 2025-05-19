@@ -1,5 +1,4 @@
-﻿// KanbanBoardDTO.cs
-public class KanbanBoardDTO
+﻿public class KanbanBoardDTO
 {
     public int Id { get; set; }
     public string Name { get; set; }

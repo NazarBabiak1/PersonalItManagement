@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using PersonalItManagement.Models;
-using System;
 
 namespace PersonalItManagement.Data.Models
 {

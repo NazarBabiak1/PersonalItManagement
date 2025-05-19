@@ -5,7 +5,6 @@
     public DateTime CreatedAt { get; set; }
     public string UserName { get; set; } = null!;
 }
-
 public class CreateOrderCommentDTO
 {
     public int OrderId { get; set; }
