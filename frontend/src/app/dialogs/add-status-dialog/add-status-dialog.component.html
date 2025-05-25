@@ -1,0 +1,32 @@
+<div class="p-6">
+  <h2 class="text-lg font-semibold text-gray-800" mat-dialog-title>Додати новий статус</h2>
+  <mat-dialog-content>
+    <form #statusForm="ngForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="w-full">
+        <mat-label>Назва статусу</mat-label>
+        <input [(ngModel)]="statusName" matInput name="statusName" placeholder="Введіть назву статусу" required/>
+        <mat-error *ngIf="statusForm.form.get('statusName')?.invalid && statusForm.form.get('statusName')?.touched">
+          Назва статусу є обов'язковою
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button
+      (click)="onCancel()"
+      class="text-gray-600 hover:text-gray-800"
+      mat-button
+    >
+      Скасувати
+    </button>
+    <button
+      (click)="onSubmit()"
+      [disabled]="statusForm.invalid"
+      class="bg-blue-600 text-white hover:bg-blue-700"
+      color="primary"
+      mat-button
+    >
+      Додати
+    </button>
+  </mat-dialog-actions>
+</div>

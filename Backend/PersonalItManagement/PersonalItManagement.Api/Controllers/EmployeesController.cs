@@ -36,6 +36,24 @@ namespace PersonalItManagement.Api.Controllers
             return Ok(employees);
         }
 
+        [HttpGet("byOrder")]
+        public ActionResult<IEnumerable<EmployeeDTO>> GetEmployeesByOrderId([FromQuery] int orderId)
+        {
+            var employees = _context.Employees
+                .Include(e => e.User)
+                .Where(e => e.OrderId == orderId)
+                .Select(e => new EmployeeDTO
+                {
+                    Id = e.Id,
+                    UserId = e.UserId,
+                    Percentage = e.Percentage,
+                    OrderId = e.OrderId,
+                })
+                .ToList();
+
+            return Ok(employees);
+        }
+
         // POST: api/employees
         [HttpPost]
         public ActionResult<EmployeeDTO> CreateEmployee([FromBody] EmployeeDTO employeeDto)

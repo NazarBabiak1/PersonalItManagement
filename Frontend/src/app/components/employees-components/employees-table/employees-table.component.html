@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of data" [class.expanded]="item.expanded">
-      <td class="name-cell">{{ item.userName }}</td>
+      <td class="name-cell">{{ item.userId }}</td>
       <td class="detail-cell" data-label="ID:">{{ item.id }}</td>
       <td class="detail-cell" data-label="СТАВКА:">{{ item.percentage }}</td>
       <td class="action-cell">

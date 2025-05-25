@@ -1,6 +1,7 @@
 export interface Employee {
   id: number;
-  userName: string;
+  userId: string;
+  orderId: number;
   percentage: number;
   expanded?: boolean;
 }

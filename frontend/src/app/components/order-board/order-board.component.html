@@ -1,16 +1,52 @@
+<div class="toolbar flex items-center gap-4 px-6 py-3 bg-white border-b border-gray-200 shadow-sm">
+  <div class="flex items-center gap-2">
+    <label class="text-sm font-medium text-gray-600" for="boardSelect">Борда:</label>
+    <select
+      (change)="onBoardChange()"
+      [(ngModel)]="selectedBoardId"
+      class="border border-gray-300 text-sm rounded-md px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      id="boardSelect"
+    >
+      <option *ngFor="let board of boards" [value]="board.id">{{ board.name }}</option>
+    </select>
+  </div>
+
+  <button
+    (click)="addStatusToCurrentBoard()"
+    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-md shadow-sm transition"
+  >
+    <i class="lucide lucide-plus"></i>
+    Додати статус
+  </button>
+
+  <button
+    (click)="addNewBoard()"
+    class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-4 py-2 rounded-md shadow-sm transition"
+  >
+    <i class="lucide lucide-layout-dashboard"></i>
+    Нова борда
+  </button>
+</div>
+
+
 <div class="board-wrapper">
   <div class="board flex gap-6 p-6 bg-cork">
     <div *ngFor="let status of statuses"
          class="column bg-white shadow-lg rounded-xl p-6 w-[320px] flex-shrink-0 border border-gray-100">
-      <h2
-        class="column-title text-xl font-semibold mb-6 text-center text-gray-800 flex items-center justify-center gap-2">
-        <span [ngClass]="{
-          'bg-yellow-100 text-yellow-600': status.id === 1,
-          'bg-blue-100 text-blue-600': status.id === 2,
-          'bg-green-100 text-green-600': status.id === 3
-        }"></span>
-        {{ status.name }}
-      </h2>
+      <div class="column-header relative mb-6">
+        <h2 class="column-title text-xl font-semibold text-center text-gray-800">
+          {{ status.name }}
+
+          <div class="menu-wrapper absolute top-0 right-0">
+            <button (click)="status.menuOpen = !status.menuOpen" class="menu-btn">⋯</button>
+            <ul (mouseleave)="status.menuOpen = false" *ngIf="status.menuOpen" class="status-menu">
+              <li (click)="editStatus(status)">Редагувати</li>
+              <li (click)="deleteStatus(status)">Видалити</li>
+            </ul>
+          </div>
+        </h2>
+      </div>
+
 
       <div
         #statusList="cdkDropList"
@@ -33,6 +69,15 @@
           <p class="order-address text-sm text-gray-600 mt-1">{{ order.address }}</p>
         </div>
       </div>
+
+      <!-- Кнопка "Додати ордер" -->
+      <button
+        (click)="openAddOrderDialog(status.id)"
+        class="add-order-btn mt-6"
+      >
+        Додати замовлення
+      </button>
+
     </div>
   </div>
 </div>

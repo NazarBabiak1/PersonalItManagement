@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PersonalItManagement.Data.Models;
 using PersonalItManagement.Models;
 using PersonalITManagement.Data.Context;
@@ -32,6 +33,24 @@ namespace PersonalItManagement.Api.Controllers
                     OrderId = m.OrderId
                 })
                 .ToList();
+
+            return Ok(materials);
+        }
+
+        [HttpGet("byOrder")]
+        public async Task<ActionResult<IEnumerable<MaterialDTO>>> GetMaterialsByOrderId([FromQuery] int orderId)
+        {
+            var materials = await _context.Materials
+                .Where(m => m.OrderId == orderId)
+                .Select(m => new MaterialDTO
+                {
+                    Id = m.Id,
+                    Name = m.Name,
+                    Count = m.Count,
+                    Price = m.Price,
+                    OrderId = m.OrderId
+                })
+                .ToListAsync();
 
             return Ok(materials);
         }

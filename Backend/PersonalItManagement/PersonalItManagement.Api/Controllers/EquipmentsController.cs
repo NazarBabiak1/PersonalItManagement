@@ -3,6 +3,7 @@ using PersonalITManagement.Data.Context;
 using PersonalItManagement.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace PersonalItManagement.Api.Controllers
 {
@@ -31,6 +32,24 @@ namespace PersonalItManagement.Api.Controllers
                     OrderId = e.OrderId
                 })
                 .ToList();
+
+            return Ok(equipments);
+        }
+
+        [HttpGet("byOrder")]
+        public async Task<ActionResult<IEnumerable<EquipmentDTO>>> GetEquipmentsByOrderId([FromQuery] int orderId)
+        {
+            var equipments = await _context.Equipments
+                .Where(e => e.OrderId == orderId)
+                .Select(e => new EquipmentDTO
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    Count = e.Count,
+                    Price = e.Price,
+                    OrderId = e.OrderId
+                })
+                .ToListAsync();
 
             return Ok(equipments);
         }

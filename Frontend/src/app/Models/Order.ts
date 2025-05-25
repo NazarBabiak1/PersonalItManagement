@@ -9,7 +9,7 @@ export interface Order {
   remainingAmount: number;
   orderStatusId: number;
   boardId: number;
-  employeesName: string;
-  equipmentsName: string;
-  materialsName: string;
+  employeesName?: string;
+  equipmentsName?: string;
+  materialsName?: string;
 }

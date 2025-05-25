@@ -135,4 +135,9 @@ export class AuthService {
     return roles.some(r => userRoles.includes(r));
   }
 
+  getCurrentUserId(): string {
+    return localStorage.getItem('userId') ?? '';
+  }
+
+
 }

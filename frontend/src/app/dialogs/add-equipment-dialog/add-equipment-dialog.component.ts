@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {EquipmentService} from '../../services/equipment.service';
 
 @Component({
   selector: 'app-add-equipment-dialog',
@@ -25,6 +26,7 @@ export class AddEquipmentDialogComponent {
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<AddEquipmentDialogComponent>,
+    private equipmentService: EquipmentService,
     @Inject(MAT_DIALOG_DATA) public data: { orderId: number }
   ) {
     this.form = this.fb.group({
@@ -34,10 +36,19 @@ export class AddEquipmentDialogComponent {
     });
   }
 
-  submit() {
+  submit(): void {
     if (this.form.valid) {
-      const value = {...this.form.value, orderId: this.data.orderId};
-      this.dialogRef.close(value);
+      const equipmentData = {
+        ...this.form.value,
+        orderId: this.data.orderId
+      };
+
+      this.equipmentService.addEquipment(equipmentData).subscribe({
+        next: () => this.dialogRef.close(true),
+        error: err => {
+          console.error('Помилка додавання матеріалу:', err);
+        }
+      });
     }
   }
 

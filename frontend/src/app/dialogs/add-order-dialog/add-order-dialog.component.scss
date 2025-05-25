@@ -1,0 +1,252 @@
+:host {
+  display: block;
+  max-width: 500px;
+  background-color: #f4f5f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+form {
+  padding: 24px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #172b4d;
+  text-align: center;
+  padding: 24px;
+  background: #fafbfc;
+  border-bottom: 1px solid #dfe1e6;
+  margin: 0;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #344563;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dfe1e6;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #172b4d;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #4c9aff;
+  box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.2);
+  outline: none;
+}
+
+input[readonly] {
+  background-color: #f4f5f7;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+.error-message {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #e63946;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.form-actions {
+  padding: 12px 24px;
+  border-top: 1px solid #dfe1e6;
+  background: #fafbfc;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.form-actions button {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.form-actions button[color="secondary"] {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.form-actions button[color="secondary"]:hover {
+  background: #d1d5db;
+}
+
+.form-actions button[color="primary"] {
+  background: #0052cc;
+  color: #ffffff;
+}
+
+.form-actions button[color="primary"]:hover:not(:disabled) {
+  background: #0747a6;
+}
+
+.form-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #bfdbfe;
+}
+
+/* Анімація появи повідомлень про помилки */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Анімація для модального вікна */
+:host-context(.mat-mdc-dialog-container) {
+  animation: slideIn 0.3s ease-out;
+  border-radius: 8px;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Анімація для спінера */
+.animate-spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Темна тема */
+:host-context(.dark) {
+  background-color: #1f2937;
+
+  form {
+    background-color: #374151;
+  }
+
+  h2 {
+    color: #e5e7eb;
+    background: #4b5563;
+    border-bottom: 1px solid #6b7280;
+  }
+
+  label {
+    color: #d1d5db;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    background-color: #4b5563;
+    border-color: #6b7280;
+    color: #e5e7eb;
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+  }
+
+  input[readonly] {
+    background-color: #6b7280;
+    color: #9ca3af;
+  }
+
+  input::placeholder {
+    color: #9ca3af;
+  }
+
+  .error-message {
+    color: #f87171;
+  }
+
+  .form-actions {
+    background: #4b5563;
+    border-top: 1px solid #6b7280;
+  }
+
+  .form-actions button[color="secondary"] {
+    background: #6b7280;
+    color: #e5e7eb;
+  }
+
+  .form-actions button[color="secondary"]:hover {
+    background: #9ca3af;
+  }
+
+  .form-actions button[color="primary"] {
+    background: #2563eb;
+  }
+
+  .form-actions button[color="primary"]:hover:not(:disabled) {
+    background: #3b82f6;
+  }
+
+  .form-actions button:disabled {
+    background: #1e3a8a;
+  }
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+  :host {
+    max-width: 100%;
+    border-radius: 0;
+  }
+  form {
+    padding: 16px;
+  }
+  .form-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

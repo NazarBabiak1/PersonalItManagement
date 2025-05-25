@@ -1,0 +1,83 @@
+<div class="relative">
+  <form (ngSubmit)="onSubmit()" [formGroup]="orderForm">
+    <h2>Додати нове замовлення</h2>
+    <div>
+      <label>Назва</label>
+      <input
+        formControlName="name"
+        placeholder="Введіть назву"
+        type="text"
+      />
+      <div *ngIf="orderForm.get('name')?.invalid && orderForm.get('name')?.touched" class="error-message">
+        Назва обов’язкова (мін. 3 символи)
+      </div>
+    </div>
+
+    <div>
+      <label>Адреса</label>
+      <input
+        formControlName="address"
+        placeholder="Введіть адресу"
+        type="text"
+      />
+      <div *ngIf="orderForm.get('address')?.invalid && orderForm.get('address')?.touched" class="error-message">
+        Адреса обов’язкова (мін. 5 символів)
+      </div>
+    </div>
+
+    <div>
+      <label>Загальна сума</label>
+      <input
+        formControlName="totalPrice"
+        placeholder="Введіть суму"
+        type="number"
+      />
+      <div *ngIf="orderForm.get('totalPrice')?.invalid && orderForm.get('totalPrice')?.touched" class="error-message">
+        Загальна сума обов’язкова (не від’ємна)
+      </div>
+    </div>
+
+    <div>
+      <label>Знижка</label>
+      <input
+        formControlName="discount"
+        placeholder="Введіть знижку"
+        type="number"
+      />
+      <div *ngIf="orderForm.get('discount')?.invalid && orderForm.get('discount')?.touched" class="error-message">
+        Знижка не може бути від’ємною
+      </div>
+    </div>
+
+    <div>
+      <label>Сплачена сума</label>
+      <input
+        formControlName="paidAmount"
+        placeholder="Введіть сплачену суму"
+        type="number"
+      />
+      <div *ngIf="orderForm.get('paidAmount')?.invalid && orderForm.get('paidAmount')?.touched" class="error-message">
+        Сплачена сума не може бути від’ємною
+      </div>
+    </div>
+
+    <div>
+      <label>Залишок</label>
+      <input
+        formControlName="remainingAmount"
+        readonly
+        type="number"
+      />
+    </div>
+
+    <div class="form-actions">
+      <button (click)="onCancel()" color="secondary" type="button">
+        Скасувати
+      </button>
+      <button [disabled]="orderForm.invalid || isLoading" color="primary" type="submit">
+        <span *ngIf="isLoading" class="animate-spin mr-1">⏳</span>
+        <span *ngIf="!isLoading">Додати</span>
+      </button>
+    </div>
+  </form>
+</div>

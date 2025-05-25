@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {
   MAT_DIALOG_DATA,
@@ -8,38 +8,52 @@ import {
   MatDialogTitle
 } from '@angular/material/dialog';
 import {EmployeeService} from '../../services/employee.service';
-import {CommonModule} from '@angular/common';
+import {UserService} from '../../services/user.service'; // 👈 додай
+import {User} from '../../Models/User';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import {MatOption, MatSelect} from '@angular/material/select';
+import {NgForOf} from '@angular/common';
+import {MatButton} from '@angular/material/button';
+import {MatInput} from '@angular/material/input'; // 👈 додай
 
 @Component({
   selector: 'app-add-employee-dialog',
   templateUrl: './add-employee-dialog.component.html',
   standalone: true,
   imports: [
-    CommonModule,
+    MatDialogTitle,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
+    MatSelect,
+    MatOption,
+    NgForOf,
+    MatDialogContent,
     MatDialogActions,
-    MatDialogTitle,
-    MatDialogContent
+    MatButton,
+    MatInput
   ]
 })
-export class AddEmployeeDialogComponent {
+export class AddEmployeeDialogComponent implements OnInit {
   form: FormGroup;
+  users: User[] = [];
 
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<AddEmployeeDialogComponent>,
     private employeeService: EmployeeService,
+    private userService: UserService, // 👈 інжекція
     @Inject(MAT_DIALOG_DATA) public data: { orderId: number }
   ) {
     this.form = this.fb.group({
       userId: ['', Validators.required],
       percentage: [0, [Validators.required, Validators.min(1), Validators.max(100)]]
+    });
+  }
+
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe({
+      next: users => this.users = users,
+      error: err => console.error('Помилка завантаження користувачів:', err)
     });
   }
 
@@ -54,7 +68,6 @@ export class AddEmployeeDialogComponent {
         next: () => this.dialogRef.close(true),
         error: err => {
           console.error('Помилка додавання працівника:', err);
-          // тут можна показати повідомлення користувачу
         }
       });
     }

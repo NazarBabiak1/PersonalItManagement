@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MaterialService} from '../../../services/materials-controller.service';
+import {MaterialService} from '../../../services/materials.service';
 import {Material} from '../../../Models/Material';
 
 @Component({

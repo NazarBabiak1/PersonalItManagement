@@ -209,6 +209,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PersonalItManagement.Api.Controllers.EmployeesController",
+    "Method": "GetEmployeesByOrderId",
+    "RelativePath": "api/Employees/byOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[EmployeeDTO, PersonalItManagement.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "PersonalItManagement.Api.Controllers.EquipmentsController",
     "Method": "GetEquipments",
     "RelativePath": "api/Equipments",
@@ -269,6 +295,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Api.Controllers.EquipmentsController",
+    "Method": "GetEquipmentsByOrderId",
+    "RelativePath": "api/Equipments/byOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[EquipmentDTO, PersonalItManagement.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "PersonalItManagement.Controllers.KanbanBoardsController",
@@ -440,6 +492,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Api.Controllers.MaterialsController",
+    "Method": "GetMaterialsByOrderId",
+    "RelativePath": "api/Materials/byOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MaterialDTO, PersonalItManagement.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "PersonalItManagement.Controllers.OrderCommentsController",
@@ -885,5 +963,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PersonalItManagement.Api.Controllers.UsersController",
+    "Method": "GetUsers",
+    "RelativePath": "api/Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PersonalItManagement.Data.DTOs.UserDTO, PersonalItManagement.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

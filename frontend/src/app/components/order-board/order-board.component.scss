@@ -47,7 +47,7 @@
     transform: translateX(-50%);
     width: 40px;
     height: 2px;
-    background: #3b82f6;
+    background: #6be67b;
     border-radius: 2px;
   }
 }
@@ -83,7 +83,7 @@
   &:hover {
     background: #f1f5f9;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-    border-color: #3b82f6;
+    border-color: #84ed92;
   }
 
   &:active {
@@ -107,17 +107,160 @@
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border: 2px solid #3b82f6;
+  border: 2px solid #84ed92;
   transform: rotate(1deg);
 }
 
 .cdk-drag-placeholder {
   background: #e0f2fe;
-  border: 2px dashed #3b82f6;
+  border: 2px dashed #84ed92;
   border-radius: 8px;
   min-height: 60px;
 }
 
 .cdk-drag-animating {
   transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.add-order-btn {
+  width: 100%;
+  background-color: #ffffff;
+  color: #84ed92;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid #84ed92;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+  transition: all 0.2s ease-in-out;
+  margin-top: 16px;
+}
+
+.add-order-btn:hover {
+  background-color: #f0f4ff;
+  color: #84ed92;
+  border-color: #84ed92;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.15);
+}
+
+.add-order-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdfe4;
+  box-shadow: 0 1px 2px rgba(9, 30, 66, 0.1);
+
+  select {
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #c1c7d0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #172b4d;
+    background-color: #fafbfc;
+    transition: border 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #2684ff;
+      box-shadow: 0 0 0 2px rgba(38, 132, 255, 0.2);
+    }
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #5e6c84;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+    &.add-status {
+      background-color: #0052cc;
+      color: #fff;
+
+      &:hover {
+        background-color: #0747a6;
+      }
+    }
+
+    &.add-board {
+      background-color: #36b37e;
+      color: #fff;
+
+      &:hover {
+        background-color: #22a06b;
+      }
+    }
+
+    i {
+      font-size: 16px;
+    }
+  }
+}
+
+.menu-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 16px; /* Slightly smaller for better aesthetics */
+  font-weight: bold; /* Make the dots more prominent */
+  cursor: pointer;
+  padding: 14px 18px; /* Adjusted padding for better click area */
+  line-height: 1;
+  color: #666;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.status-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 0; /* Added padding for better spacing */
+  list-style: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 140px;
+}
+
+.status-menu li {
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
 }

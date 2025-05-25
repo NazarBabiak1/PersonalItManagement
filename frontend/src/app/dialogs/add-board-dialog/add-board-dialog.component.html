@@ -1,0 +1,12 @@
+<!-- add-board-dialog.component.html -->
+<h2 mat-dialog-title>Нова борда</h2>
+<mat-dialog-content>
+  <mat-form-field class="w-full">
+    <mat-label>Назва борди</mat-label>
+    <input [(ngModel)]="boardName" matInput placeholder="Введіть назву борди" required/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button (click)="onCancel()" mat-button>Скасувати</button>
+  <button (click)="onSubmit()" [disabled]="!boardName.trim()" color="primary" mat-button>Створити</button>
+</mat-dialog-actions>

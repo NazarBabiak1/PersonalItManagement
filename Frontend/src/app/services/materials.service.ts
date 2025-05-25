@@ -16,6 +16,12 @@ export class MaterialService {
     return this.http.get<Material[]>(this.apiUrl, {headers: {'accept': '*/*'}});
   }
 
+  getMaterialsByOrderId(orderId: number): Observable<Material[]> {
+    return this.http.get<Material[]>(`${this.apiUrl}/byOrder?orderId=${orderId}`, {
+      headers: {'accept': '*/*'}
+    });
+  }
+
   addMaterial(material: { name: string; count: number; price: number; orderId: number }) {
     return this.http.post(this.apiUrl, material);
   }

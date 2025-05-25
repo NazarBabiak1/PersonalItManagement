@@ -9,6 +9,7 @@ import {ReportsComponent} from './components/reports/reports.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {AuthGuard} from './guards/auth.guards';
 import {AuthorizationComponent} from './components/auth-components/auth.component';
+import {OrdersComponent} from './components/order-components/orders/orders.component';
 
 export const routes: Routes = [
   {path: 'login', component: AuthorizationComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
   {path: 'materials', component: MaterialsComponent, canActivate: [AuthGuard]},
   {path: 'reports', component: ReportsComponent, canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
   {path: '', redirectTo: '/equipment', pathMatch: 'full'},
   {path: '**', redirectTo: '/equipment'}
 ];

@@ -2,7 +2,15 @@
   <mat-card class="order-details-card">
     <mat-card-header>
       <mat-card-title>{{ data.order.name }}</mat-card-title>
-      <mat-card-subtitle> {{ data.order.address }}</mat-card-subtitle>
+      <mat-card-subtitle>{{ data.order.address }}</mat-card-subtitle>
+      <button
+        (click)="deleteOrder()"
+        aria-label="Видалити ордер"
+        class="delete-order-button"
+        mat-icon-button
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
     </mat-card-header>
     <mat-card-content>
       <p><strong>Статус:</strong> {{ getStatusName(data.order.orderStatusId) }}</p>
@@ -10,9 +18,37 @@
       <p><strong>Знижка:</strong> {{ data.order.discount | currency:'UAH' }}</p>
       <p><strong>Сплачена сума:</strong> {{ data.order.paidAmount | currency:'UAH' }}</p>
       <p><strong>Залишок до оплати:</strong> {{ data.order.remainingAmount | currency:'UAH' }}</p>
-      <p><strong>Працівники:</strong> {{ data.order.employeesName }}</p>
-      <p><strong>Обладнання:</strong> {{ data.order.equipmentsName }}</p>
-      <p><strong>Матеріали:</strong> {{ data.order.materialsName }}</p>
+
+      <p><strong>Працівники:</strong></p>
+      <ul *ngIf="employees.length; else noEmployees">
+        <li *ngFor="let employee of employees">
+          {{ employee.userId }} (Відсоток: {{ employee.percentage }}%)
+        </li>
+      </ul>
+      <ng-template #noEmployees>
+        <p>Немає працівників</p>
+      </ng-template>
+
+      <p><strong>Обладнання:</strong></p>
+      <ul *ngIf="equipments.length; else noEquipment">
+        <li *ngFor="let equipment of equipments">
+          {{ equipment.name }} (Кількість: {{ equipment.count }}, Ціна: {{ equipment.price | currency:'UAH' }})
+        </li>
+      </ul>
+      <ng-template #noEquipment>
+        <p>Немає обладнання</p>
+      </ng-template>
+
+      <p><strong>Матеріали:</strong></p>
+      <ul *ngIf="materials.length; else noMaterials">
+        <li *ngFor="let material of materials">
+          {{ material.name }} (Кількість: {{ material.count }}, Ціна: {{ material.price | currency:'UAH' }})
+        </li>
+      </ul>
+      <ng-template #noMaterials>
+        <p>Немає матеріалів</p>
+      </ng-template>
+
       <p *ngIf="data.order.expanded !== undefined"><strong>Розгорнуто:</strong> {{ data.order.expanded ? 'Так' : 'Ні' }}
       </p>
     </mat-card-content>
@@ -26,6 +62,5 @@
     <mat-card-actions align="end">
       <button (click)="close()" color="primary" mat-button>Закрити</button>
     </mat-card-actions>
-
   </mat-card>
 </div>
